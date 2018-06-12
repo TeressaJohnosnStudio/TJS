@@ -1,0 +1,22 @@
+{
+  "name": "tjs",
+  "version": "1.0.0",
+  "description": "A website for Teressa Johnson Studio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeressaJohnosnStudio/TJS.git"
+  },
+  "author": "Ryan Johnson, Rafael Malave, Daniel Pillay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TeressaJohnosnStudio/TJS/issues"
+  },
+  "homepage": "https://github.com/TeressaJohnosnStudio/TJS#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
