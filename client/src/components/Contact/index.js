@@ -9,10 +9,10 @@ export default class Contact extends React.Component {
             <div className="left">
                 <div className="img"></div>
                 <div className="media">
-                    <img className="icon">pinterest</img>
-                    <img className="icon">instagram</img>
-                    <img className="icon">twitter</img>
-                    <img className="icon">facebook</img>
+                    <img className="icon"/>
+                    <img className="icon"/>
+                    <img className="icon"/>
+                    <img className="icon"/>
                 </div>
             </div>
 
