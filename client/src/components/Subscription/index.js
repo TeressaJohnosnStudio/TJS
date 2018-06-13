@@ -20,17 +20,17 @@ export default class Subscription extends React.Component {
 
             <div className="size-options">
                 <div id="option1">
-                    <img>1</img>
+                    <img />
                     <p>YES, LOVELY.</p>
                 </div>
 
                 <div id="option2">
-                    <img>2</img>
+                    <img />
                     <p>OH, PICK ME!</p>
                 </div>
 
                 <div id="option3">
-                    <img>3</img>
+                    <img />
                     <p>WHY, HELLO!</p>
                 </div>
             </div>
