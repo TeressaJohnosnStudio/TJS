@@ -72,16 +72,9 @@ export default class FAQ extends React.Component {
                     </ul>
 
                     <ul>
-                        <li></li>
+                        <li>What does studio-based mean?</li>
                         <ul>
-                            <li></li>
-                        </ul>
-                    </ul>
-
-                    <ul>
-                        <li></li>
-                        <ul>
-                            <li></li>
+                            <li>It means we don’t have a storefront. It means we don’t have crazy overhead. It means if you come to visit, you’ll get a tasty treat in our kitchen, but not a flower arrangement you can pick up real quick to bring to your hosts that night. It also means that we work out of our home predominately, and set up shop wherever needed to make things right for our clients.</li>
                         </ul>
                     </ul>
 
