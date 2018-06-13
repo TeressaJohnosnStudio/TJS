@@ -5,6 +5,9 @@ export default class Reviews extends React.Component {
         super(props);
     }
     render(){
+        return <React.Fragment>
+            
+        </React.Fragment>
     }
     
 }

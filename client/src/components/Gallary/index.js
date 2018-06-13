@@ -5,5 +5,8 @@ export default class Gallary extends React.Component {
         super(props);
     }
     render(){
-    } 
+        return <React.Fragment>
+            
+        </React.Fragment>
+    }
 }

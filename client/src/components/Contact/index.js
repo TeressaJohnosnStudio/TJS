@@ -5,6 +5,9 @@ export default class Contact extends React.Component {
         super(props);
     }
     render(){
+        return <React.Fragment>
+            
+        </React.Fragment>
     }
     
 }
