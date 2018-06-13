@@ -84,5 +84,5 @@ export default class FAQ extends React.Component {
 
         </React.Fragment>
     }
-    
+
 }
