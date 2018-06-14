@@ -4,6 +4,7 @@ const app = express();
 const webpack = require('webpack');
 const compiler = webpack(require('./webpack.config.js'));
 const middleware = require('webpack-dev-middleware');
+const nodemailer = require('nodemailer')
 const instance = middleware(compiler);
 
 app.use('client', express.static(`${__dirname}/client`));
@@ -16,6 +17,9 @@ app.get('/', (req, res) => {
 instance.waitUntilValid(() => {
     console.log('package is valid');
 });
+
+
+//CONTACT PAGE - EMAIL:
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
