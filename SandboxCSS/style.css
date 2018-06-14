@@ -1,0 +1,1639 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+@media screen
+{
+    .mobile
+    {
+        display: none;
+    }
+
+    body,
+    html
+    {
+        font: 16px/100% 'Lato', sans-serif;
+        width: 100%;
+        margin: 0;
+        overflow-x: hidden;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    #Wrapper
+    {
+    }
+
+    .hide
+    {
+        display: none;
+    }
+
+    .show
+    {
+        display: block;
+    }
+
+    .fadeIn
+    {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transition: opacity 400ms ease-in;
+    }
+
+    .fadeOut
+    {
+        opacity: 0;
+        visibility: visible;
+        -webkit-transition: opacity 400ms ease-in;
+    }
+
+    blockquote
+    {
+        margin: 0;
+    }
+
+        blockquote p
+        {
+        }
+
+        blockquote footer
+        {
+            text-align: right;
+        }
+
+    .contactForm
+    {
+    }
+
+        .contactForm > div
+        {
+            width: 80%;
+            margin: 3% auto;
+        }
+
+        .contactForm span[style*="inline"]
+        {
+            display: block !important;
+        }
+
+    input,
+    textarea
+    {
+        width: 100%;
+        height: 30px;
+        font-size: 1.4em;
+        padding: 1%;
+        font-family: 'lato', sans-serif;
+        border: 1px solid #CCC;
+    }
+
+    textarea
+    {
+        height: 200px;
+        font-size: 1.1em;
+    }
+
+    .button
+    {
+        width: 50%;
+        height: auto;
+        background: #CCC;
+        border: none;
+        margin: auto;
+        text-transform: uppercase;
+        color: #777;
+        font-size: 1em;
+        /* line-height: 1em; */
+        padding: 3% 0 2.5% 0;
+    }
+
+
+    header
+    {
+        text-align: center;
+    }
+
+        header > section
+        {
+            width: 90%;
+            margin: auto;
+        }
+
+    #Home header img
+    {
+        width: 250px;
+    }
+
+    header > section > div
+    {
+        display: none;
+    }
+
+    header img
+    {
+        width: 100%;
+        width: 150px;
+        border: none;
+    }
+
+    p
+    {
+        line-height: 22px;
+    }
+
+    h2
+    {
+        text-transform: uppercase;
+        font-weight: inherit;
+        line-height: 34px;
+    }
+
+    #Home nav
+    {
+        height: 250px;
+    }
+
+    nav
+    {
+        height: 145px;
+        min-width: 1070px;
+        margin: auto;
+        width: 50%;
+    }
+
+        nav:first-child
+        {
+        }
+
+        nav ul li:nth-child(4),
+        nav ul li:nth-child(5),
+        nav ul li:last-child,
+        nav ul li:nth-child(9)
+        {
+            border-right: none;
+        }
+
+        nav:last-child
+        {
+        }
+
+        nav ul
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+    #Home nav li
+    {
+        top: 100px;
+    }
+
+    nav li
+    {
+        float: left;
+        top: 65px;
+        position: relative;
+        border-right: 1px solid #CCC;
+        /*width: 12%;*/
+        display: block;
+    }
+
+    li.handle
+    {
+        height: 0;
+        width: 0;
+        transition: all 400ms ease-in-out;
+        -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        overflow: hidden;
+    }
+
+    #Gallery nav li.gallery:after,
+    #Info nav li.info:after,
+    #About nav li.about:after,
+    #Reviews nav li.reviews:after,
+    #FAQ nav li.faq:after,
+    #Contact nav li.contact:after,
+    #Subscribe nav li.subscribe:after
+    {
+        background: url('/common/img/pointer.png') 0% 0%/50% no-repeat;
+        width: 20px;
+        height: 18px;
+        display: block;
+        /* border: red; */
+        position: absolute;
+        top: -74px;
+        left: 0;
+        right: 0;
+        /* background: red; */
+        content: "";
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        margin: auto;
+    }
+
+    #Home nav li.logo,
+    nav li.logo
+    {
+        top: 0;
+        /*width: 26.5%;*/
+        padding: 0 15px 0 25px;
+    }
+
+    nav li a
+    {
+        display: block;
+        padding: 0 15px;
+        text-transform: uppercase;
+        width: auto;
+    }
+
+    nav li.logo a
+    {
+        padding: 0;
+    }
+
+    nav li:last-child a
+    {
+        border-right: none;
+    }
+
+    nav li a:last-child
+    {
+    }
+
+    a
+    {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .clearFix:after
+    {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .content
+    {
+        text-align: center;
+        min-height: 0;
+    }
+
+        .content > div:first-child p
+        {
+            text-align: right;
+        }
+
+        .content > div
+        {
+            float: left;
+            padding: 10px;
+            width: 25.66%;
+            position: relative;
+            padding: 40px 12%;
+            min-height: 0;
+        }
+
+            .content > div:last-child
+            {
+                text-align: left;
+            }
+
+    .hexagon
+    {
+        background: url(/common/img/hexagon.png) 50% 50%/99% no-repeat;
+        width: 70px;
+        height: 78px;
+        padding: 0;
+        position: absolute;
+        right: -36px;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        /* z-index: 1; */
+        font-size: 1.5em;
+        text-transform: lowercase;
+        text-align: center;
+    }
+
+    .oneColumn
+    {
+        width: 100%;
+        margin: auto;
+    }
+
+    .twoColumn
+    {
+    }
+
+        .twoColumn .pageContent > div
+        {
+            position: relative;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .twoColumn .pageContent .subSection
+        {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .twoColumn .col1,
+        .twoColumn .col2
+        {
+            float: left;
+            padding: 0;
+            width: 49.92%;
+            position: relative;
+            overflow: hidden;
+            min-height: 160px;
+        }
+
+    #FAQ .twoColumn .col2
+    {
+        overflow: auto;
+    }
+    #Order .twoColumn .secondaryPageContent
+    {
+        max-width: 800px;
+    }
+    .twoColumn .col1 .titleContainer,
+    .twoColumn .col1 .secondaryPageContent
+    {
+        margin: 0 0 0 auto;
+        max-width: 600px;
+        overflow: hidden;
+    }
+
+    .twoColumn .col2 .titleContainer
+    {
+        max-width: 600px;
+    }
+
+    .threeColumn .col1 .contentContainer
+    {
+        margin: 0 0 0 auto;
+        max-width: 500px;
+    }
+
+    .threeColumn .col1 .secondary
+    {
+        max-width: 450px;
+    }
+
+    .threeColumn .col2 .contentContainer
+    {
+    }
+
+    .threeColumn .col3 .contentContainer
+    {
+    }
+
+    .threeColumn .col3 .hexagon
+    {
+        margin: auto auto auto 2%;
+    }
+    /*---------------
+START ABOUT PAGE
+-----------------*/
+
+
+
+    #About .hexagon,
+    #Info .hexagon,
+    #Reviews .hexagon,
+    #Gallery .hexagon,
+    #FAQ .hexagon,
+    #Contact .hexagon,
+    #Order .hexagon,
+    #Subscribe .hexagon
+    {
+        position: relative;
+        width: 100px;
+        height: 105px;
+        padding: 87px 0 0 0;
+        /* overflow: hidden; */
+    }
+
+    #Contact .hexagon,
+    #Order .hexagon,
+    #Subscribe .hexagon
+    {
+        right: 0;
+    }
+
+    .descriptor
+    {
+        float: left;
+        width: 47%;
+        height: 100%;
+        padding: 0% 1%;
+    }
+
+        .descriptor blockquote
+        {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .descriptor.style2
+        {
+            width: 64%;
+            position: relative;
+        }
+
+            .descriptor.style2 h2
+            {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                height: 35px;
+                /* vertical-align: middle; */
+                /* text-align: center; */
+            }
+    #BlogSpot
+    {
+        box-shadow: 0 0 0 1px #c5c5c5, 0 0 0 5px #FFF, 0 0 0 6px #c5c5c5;
+        display: block;
+        text-align: center;
+        background: #FFF;
+        transition: background 200ms ease-in;
+        -webkit-transition: background 400ms ease-in;
+        -moz-transition: background 200ms ease-in;
+        -ms-transition: background 200ms ease-in;
+        -o-transition: background 200ms ease-in;
+    }
+        #BlogSpot:hover
+        {
+            background: #c5c5c5;
+            transition: background 200ms ease-in;
+            -webkit-transition: background 400ms ease-in;
+            -moz-transition: background 200ms ease-in;
+            -ms-transition: background 200ms ease-in;
+            -o-transition: background 200ms ease-in;
+        }
+    #About .descriptor p,
+    #FAQ .descriptor p
+    {
+        padding-top: 69px;
+    }
+
+    #Contact .descriptor p
+    {
+        padding-top: 48px;
+    }
+
+    #Info .descriptor p
+    {
+        padding: 6%;
+    }
+
+    #About .pageTitle,
+    #FAQ .pageTitle,
+    #Info .pageTitle,
+    #Reviews .pageTitle,
+    #Contact .pageTitle,
+    #Order .pageTitle,
+    #Subscribe .pageTitle
+    {
+        float: left;
+        width: 49.95%;
+        height: 100%;
+        position: relative;
+    }
+    #Subscribe .titleContainer .descriptor
+    {
+        height:105px;
+               position: relative;
+
+    }
+        #Subscribe .titleContainer .descriptor p
+        {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            height: 20px;
+            position: absolute;
+            text-align: center;
+        }
+        #Reviews .pageTitle.style2
+        {
+            width: 33%;
+        }
+
+    .hexagon.style2
+    {
+        right: -1px;
+    }
+
+    #About .content > div,
+    #Info .content > div,
+    #Reviews .content > div
+    {
+    }
+
+        #About .content > div:first-child p
+        {
+            text-align: center;
+        }
+
+    #About p
+    {
+        margin: 0;
+    }
+
+    #FAQ p
+    {
+        margin: 1% 4%;
+    }
+
+    .pageContent
+    {
+        padding: 2%;
+        max-height: 588px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #Info .pageContent
+    {
+        padding: 0;
+    }
+
+
+        #Info .pageContent > div > p,
+        details
+        {
+            display: inline-block;
+            margin-left: 17%;
+            width: 82%;
+        }
+
+        #Info .pageContent > div:last-child
+        {
+        }
+
+    .thumbContent
+    {
+        width: 81%;
+        display: inline-block;
+        margin-left: 17%;
+        overflow: hidden;
+    }
+
+    .faq .thumbContent
+    {
+        width: 100%;
+        margin-left: initial;
+    }
+
+    summary
+    {
+        margin: 1%;
+    }
+
+    #FAQ h3
+    {
+        font-size: 1em;
+        margin: 1% 0;
+        font-weight: normal;
+        cursor: pointer;
+        padding: 1%;
+        font-weight: 300;
+    }
+
+        #FAQ h3 span
+        {
+            display: inline-block;
+            padding: 0px 4px 0px 0px;
+        }
+
+            #FAQ h3 span.rotate img
+            {
+                transform: rotate(270deg);
+                -webkit-transform: rotate(270deg);
+                -moz-transform: rotate(270deg);
+                -ms-transform: rotate(270deg);
+                transition: transform 200ms ease-in-out;
+                -webkit-transition: -webkit-transform 200ms ease-in-out;
+                -moz-transition: transform 200ms ease-in-out;
+                -ms-transition: transform 200ms ease-in-out;
+            }
+
+            #FAQ h3 span img
+            {
+                width: 6px;
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                transition: transform 200ms ease-in-out;
+                -webkit-transition: -webkit-transform 200ms ease-in-out;
+                -moz-transition: transform 200ms ease-in-out;
+                -ms-transition: transform 200ms ease-in-out;
+            }
+
+
+    #FAQ
+    {
+        overflow: auto;
+    }
+    .unsub
+    {
+        padding-left: 35px;
+        font-size: .8em;
+        line-height: 20px;
+        text-transform: lowercase;
+    }
+    .iconContainer
+    {
+        display: inline-block;
+        position: absolute;
+        max-width: 40px;
+        height: auto;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 5%;
+        min-width: 25px;
+        width: 4%;
+    }
+
+    .icons
+    {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        /* height: 100%; */
+        margin: auto;
+    }
+
+    #About .pageContent p
+    {
+        margin: 6% 0;
+    }
+    #Order .content .secondaryPageContent img
+    {
+        width: 29%;
+        float: left;
+        margin: 10px;
+        padding: 5px;
+    }
+    #About .content .secondaryPageContent img,
+    #FAQ .content .secondaryPageContent img,
+    #Reviews .content .secondaryPageContent img,
+    #Contact .content .secondaryPageContent img,
+    .content .secondaryPageContent img
+    {
+        width: 80%;
+        border: 1px solid #CCC;
+        text-align: center;
+        padding: 4%;
+        margin: 5%;
+    }
+    .pageContent.row > div
+    {
+        width: 31.33%;
+        float: left;
+        display: block;
+        overflow: hidden;
+        padding: 0;
+        margin: 1%;
+    }
+    .paypalWA{
+        width: auto;
+        height: auto;
+        font-size: 1.4em;
+        padding: 0;
+        font-family: 'lato', sans-serif;
+        border: none;
+    }
+    .paypalWA:hover{
+        background: #000;
+    }
+        .pageContent.row > div img
+        {
+            width:100%;
+        }
+        .pageContent.row > div p
+        {
+            text-align:center;
+        }
+    #Info .secondaryPageContent
+    {
+    }
+    .secondaryPageContent .descriptor
+    {
+      float: none;
+     width: auto;
+        padding: 0 1%;
+    }
+    .secondaryPageContent
+    {
+        text-align: center;
+    }
+
+    .content > div .secondaryPageContent p
+    {
+        text-align: left;
+    }
+
+    .secondaryPageContent > div
+    {
+        /*border-left: 1px solid #CCC;*/
+        margin: 0 0 0 10%;
+        padding: 1% 3%;
+        position: relative;
+    }
+
+    .secondaryPageContent h2
+    {
+        text-align: left;
+    }
+
+    #Contact .linkers,
+    #Subscribe .linkers
+    {
+        position: relative;
+        height: 100%;
+        max-height: 294px;
+    }
+
+    .linkers > div
+    {
+        padding: 1% 3%;
+        /* top: 0; */
+        /* bottom: 0; */
+        margin: auto;
+        position: relative;
+    }
+
+    .linkers h2
+    {
+    }
+
+    #Contact .linkers > div,
+    #Subscribe .linkers > div
+    {
+        text-align: right;
+        width: 100%;
+        padding: 0;
+        margin: 0 0 0 auto;
+        max-width: 600px;
+    }
+
+        #Contact .linkers > div > div,
+        #Subscribe .linkers > div > div
+        {
+            width: 24%;
+            display: block;
+            float: right;
+            position: relative;
+        }
+
+    #Contact .linkers img,
+    #Subscribe .linkers img
+    {
+        display: block;
+        width: 30px;
+        margin: auto;
+        padding: 0;
+        min-width: 1px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .linkers img
+    {
+        width: 18%;
+        padding: 2% 5% 2% 0;
+        min-width: 50px;
+        max-width: 115px;
+    }
+
+        .linkers img:first-of-type
+        {
+            width: 8%;
+        }
+
+        .linkers img:nth-of-type(2)
+        {
+            width: 10%;
+        }
+
+    .linkers a img
+    {
+        opacity: .5;
+        transition: opacity 200ms ease-in;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 200ms ease-in;
+        -ms-transition: opacity 200ms ease-in;
+        -o-transition: opacity 200ms ease-in;
+    }
+
+        .linkers a img:hover
+        {
+            opacity: 1;
+            transition: opacity 200ms ease-in;
+            -webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 200ms ease-in;
+            -ms-transition: opacity 200ms ease-in;
+            -o-transition: opacity 200ms ease-in;
+        }
+    /*-------------
+END ABOUT PAGE
+---------------*/
+
+    .pointer
+    {
+        height: 30px;
+        width: 20px;
+        background: url(/common/img/pointer.png) 50% 50%/55% no-repeat;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        cursor: pointer;
+    }
+
+    .pointerRight
+    {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        right: -20px;
+    }
+
+    .pointerLeft
+    {
+        left: -20px;
+    }
+
+    .galleryContainer .pointerRight
+    {
+        right: -31px;
+    }
+
+    .galleryContainer .pointerLeft
+    {
+        left: -31px;
+    }
+
+    .leftBorder
+    {
+        border-left: 1px solid #CCC;
+    }
+
+    .rightBorder
+    {
+        border-right: 1px solid #CCC;
+    }
+
+    .bottomBorder
+    {
+        border-bottom: 1px solid #CCC;
+    }
+
+    .topBorder
+    {
+        border-top: 1px solid #CCC;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    #CarouselWrapper
+    {
+        padding: 15px 0 !important;
+        border-bottom: 1px solid #CCC;
+        border-top: 1px solid #CCC;
+    }
+
+    #Carousel div.portrait
+    {
+        width: 222px;
+    }
+
+    .carouselContent
+    {
+        overflow: hidden;
+    }
+
+    .caroufredsel_wrapper
+    {
+        margin: 0 !important;
+    }
+
+    #Carousel
+    {
+        height: 335px !important;
+    }
+
+        #Carousel div
+        {
+            text-align: center;
+            width: 500px;
+            height: 99%;
+            float: left;
+            position: relative;
+        }
+
+            #Carousel div img
+            {
+                border: none;
+                width: 100%;
+            }
+
+            #Carousel div span,
+            .imgContainer span,
+            .galleryContent > div span,
+            .secondaryPageContent > div span
+            {
+                display: none;
+            }
+
+            #Carousel div:hover span,
+            .imgContainer:hover span,
+            .galleryContent > div:hover span,
+            .secondaryPageContent > div:hover span
+            {
+                background-color: rgba(255,255,255, 0.7);
+                color: #000;
+                /* font-family: Arial, Geneva, SunSans-Regular, sans-serif; */
+                font-size: 12px;
+                /* line-height: 22px; */
+                display: inline-block;
+                width: 100%;
+                padding: 2px 0;
+                /* margin: 0 0 0 -50px; */
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+    .imgContainer:hover span
+    {
+        bottom: 40px;
+    }
+
+    #Reviews .secondaryPageContent > div:hover span
+    {
+        bottom: 54px;
+    }
+
+    footer
+    {
+        text-align: center;
+        text-transform: uppercase;
+        color: #777;
+        font-size: .7em;
+    }
+
+    /*
+--------------------------------------------------
+           -------START GALLERY---------
+--------------------------------------------------
+*/
+
+    #Gallery .content > div
+    {
+        float: left;
+        width: 33%;
+        position: relative;
+        min-height: 160px;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    #Gallery .content .col1
+    {
+        width: 47.5%;
+    }
+
+    #Gallery .content .col2
+    {
+        width: 32.5%;
+        max-width: 450px;
+    }
+
+    #Gallery .content .col3
+    {
+        width: auto;
+        /* min-width: 19.2%; */
+        float: none;
+        /* max-width: 35%; */
+        overflow: hidden;
+    }
+
+    #Gallery .content img
+    {
+        width: 100%;
+    }
+
+    .imgContainer
+    {
+        position: relative;
+        padding: 5% 5% 8% 5%;
+        border: 1px solid #CCC;
+        margin: 9%;
+        /* overflow: hidden; */
+    }
+
+        .imgContainer a:hover
+        {
+            -webkit-filter: grayscale(100%);
+            -webkit-transition: all 400ms ease-in-out;
+        }
+
+        .imgContainer a
+        {
+            -webkit-filter: grayscale(0%);
+            -webkit-transition: all 400ms ease-in-out;
+        }
+
+    .nameAttribute
+    {
+        border: 1px solid #CCC;
+        margin: auto;
+        padding: 7px;
+        background: #FFF;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        right: 0;
+        min-width: 100px;
+        max-width: 70%;
+    }
+
+    .square
+    {
+        float: left;
+        width: 50%;
+    }
+
+    .secondary
+    {
+        max-width: 600px;
+        margin: auto 1% auto auto;
+    }
+
+
+    .oneColumn .galleryContainer
+    {
+        width: 80%;
+        padding: 0;
+        margin: 2% auto;
+        max-width: 1524px;
+        float: none;
+    }
+
+    .galleryContent > div
+    {
+        float: left;
+        position: relative;
+    }
+
+    .galleryContent .landscape
+    {
+        width: 60%;
+    }
+
+    .galleryContent .wide
+    {
+        width: 40%;
+    }
+
+    .galleryContent .square
+    {
+        width: 20%;
+    }
+
+    .galleryContent img
+    {
+        width: 100%;
+        display: block;
+    }
+
+    .smallScreen
+    {
+        display: none;
+    }
+
+    /*
+--------------------------------------------------
+               --END START GALLERY--
+--------------------------------------------------
+*/
+
+}
+
+@media all and (max-width: 1700px) and (min-width: 1025px)
+{
+    /*-------------------------------------------
+            
+            Home Page
+            
+        ---------------------------------------------    */
+    .caroufredsel_wrapper,
+    #Carousel
+    {
+        height: 260px !important;
+    }
+
+        #Carousel > div
+        {
+            width: 385px;
+        }
+
+        #Carousel div.portrait
+        {
+            width: 180px;
+        }
+
+    .content
+    {
+        min-height: 100px;
+    }
+
+        .content > div
+        {
+            padding: 10px 12%;
+        }
+}
+
+@media all and (max-width : 1084px) and (min-width: 798px)
+{
+    #Home header img,
+    header img
+    {
+        width: 150px;
+        
+    }
+
+    header > section
+    {
+        width: 100%;
+        margin: auto;
+    }
+
+    #Home nav,
+    nav
+    {
+        width: 70%;
+        min-width: 800px;
+        height: 160px;
+    }
+
+        nav:first-child
+        {
+        }
+
+        nav:last-child
+        {
+        }
+
+        nav ul
+        {
+            height: 150px;
+        }
+
+        #Home nav li,
+        nav li
+        {
+            top: 65px;
+        }
+
+            nav li a
+            {
+                padding: 0 10px;
+                font-size: .8em;
+            }
+
+            nav li:last-child a
+            {
+                border-right: none;
+            }
+
+            nav li a:last-child
+            {
+            }
+
+    .caroufredsel_wrapper,
+    #Carousel
+    {
+        height: 160px !important;
+    }
+
+        #Carousel > div
+        {
+            width: 243px;
+        }
+
+        #Carousel div.portrait
+        {
+            width: 120px;
+        }
+    #Order .content .secondaryPageContent img
+    {
+        width: 95%;
+        margin: 10px;
+        padding: 5px;
+    }
+}
+
+@media all and (max-width : 767px)
+{
+    .twoColumn .col1, .twoColumn .col2
+    {
+        float: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    *
+    {
+        max-width: 100% !important;
+        height: auto;
+    }
+
+    .col1,
+    .secondaryPageContent *,
+    .secondaryPageContent
+    {
+        height: auto !important;
+    }
+
+    #About .pageTitle,
+    #FAQ .pageTitle,
+    #Info .pageTitle,
+    #Reviews .pageTitle,
+    #Contact .pageTitle,
+    #Subscribe .pageTitle,
+    #Order .pageTitle,
+    .descriptor
+    {
+        float: none;
+        width: auto;
+    }
+
+
+    .hexagon
+    {
+        background: url(/common/img/hexagon.png) 50% 50%/99% no-repeat;
+        width: 70px !important;
+        height: 78px !important;
+        padding: 0px !important;
+        position: relative;
+        right: auto;
+        margin: auto;
+        top: auto;
+        bottom: auto;
+        /* z-index: 1; */
+        font-size: 1.2em;
+        text-transform: lowercase;
+        text-align: center;
+    }
+
+        .hexagon span
+        {
+            top: 36%;
+            display: block;
+            position: relative;
+        }
+
+    #Info .descriptor p,
+    .descriptor p
+    {
+        padding: initial;
+    }
+
+    .secondaryPageContent > div
+    {
+        border-left: none;
+        margin: 0;
+    }
+
+    .twoColumn .col1 .titleContainer, .twoColumn .col1 .secondaryPageContent
+    {
+        margin: 10px auto;
+    }
+
+    .content > div:first-child p
+    {
+        text-align: center;
+    }
+
+    #Home nav,
+    nav
+    {
+        width: 220px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 10000;
+        background: #EFEFEF;
+        transition: left 400ms ease-in-out;
+        -webkit-transition: left 400ms ease-in-out;
+        -moz-transition: left 400ms ease-in-out;
+        -ms-transition: left 400ms ease-in-out;
+        -o-transition: left 400ms ease-in-out;
+        left: -220px;
+        min-width: 50px;
+    }
+
+        #Home nav.active,
+        nav.active
+        {
+            left: 0;
+            transition: left 400ms ease-in-out;
+            -webkit-transition: left 400ms ease-in-out;
+            -moz-transition: left 400ms ease-in-out;
+            -ms-transition: left 400ms ease-in-out;
+            -o-transition: left 400ms ease-in-out;
+        }
+
+        nav li.handle,
+        #Home nav li.handle
+        {
+            display: block;
+            width: 40px;
+            height: 40px;
+            right: -40px;
+            position: absolute;
+            top: 0;
+            transition: all 400ms ease-in-out;
+            -webkit-transition: all 400ms ease-in-out;
+            -moz-transition: all 400ms ease-in-out;
+            -ms-transition: all 400ms ease-in-out;
+            -o-transition: all 400ms ease-in-out;
+            padding: 0;
+            border: none;
+        }
+
+        nav li,
+        #Home nav li
+        {
+            float: none;
+            top: auto;
+            position: relative;
+            border-right: none;
+            width: auto;
+            display: block;
+            top: 38px;
+            padding: 10px;
+            border-bottom: 1px solid #CCC;
+            border-top: 1px solid #FFF;
+            transition: all 400ms ease-in-out;
+            -webkit-transition: all 400ms ease-in-out;
+            -moz-transition: all 400ms ease-in-out;
+            -ms-transition: all 400ms ease-in-out;
+            -o-transition: all 400ms ease-in-out;
+        }
+
+            #Home nav li.logo,
+            nav li.logo
+            {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: auto;
+                text-transform: uppercase;
+                top: 0;
+            }
+
+            nav li:hover
+            {
+                background: #999;
+                transition: all 400ms ease-in-out;
+                -webkit-transition: all 400ms ease-in-out;
+                -moz-transition: all 400ms ease-in-out;
+                -ms-transition: all 400ms ease-in-out;
+                -o-transition: all 400ms ease-in-out;
+            }
+
+    #Gallery nav li.gallery:after,
+    #Info nav li.info:after,
+    #About nav li.about:after,
+    #Reviews nav li.reviews:after,
+    #FAQ nav li.faq:after,
+    #Contact nav li.contact:after,
+    #Subscribe nav li.subscribe:after
+    {
+        display: none;
+    }
+
+    #Gallery nav li.gallery,
+    #Info nav li.info,
+    #About nav li.about,
+    #Reviews nav li.reviews,
+    #FAQ nav li.faq,
+    #Contact nav li.contact,
+    #Subscribe nav li.subscribe
+    {
+        background: #777;
+    }
+
+    .mobile
+    {
+        display: block;
+    }
+
+    .logo img
+    {
+        display: none;
+    }
+
+    .content-wrapper,
+    header section > div
+    {
+        -webkit-transform: translateX(0);
+        transition: all 400ms ease-in-out;
+        -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+    }
+
+        .content-wrapper.active,
+        header section > div.active
+        {
+            -webkit-transform: translateX(220px);
+            transition: all 400ms ease-in-out;
+            -webkit-transition: all 400ms ease-in-out;
+            -moz-transition: all 400ms ease-in-out;
+            -ms-transition: all 400ms ease-in-out;
+            -o-transition: all 400ms ease-in-out;
+        }
+
+    header > section > div
+    {
+        display: block;
+    }
+
+    .smallScreen
+    {
+        display: block;
+    }
+
+    .caroufredsel_wrapper
+    {
+        display: none !important;
+    }
+
+    #Home .content > div
+    {
+        float: none;
+        padding: 10px;
+        width: auto;
+        min-height: 0;
+        text-align: center;
+    }
+
+    #Home .hexagon
+    {
+        display: none;
+    }
+
+    .threeColumn .col1 .contentContainer
+    {
+        margin: 0 0 0 auto;
+        max-width: 100%;
+    }
+
+    #Gallery .content .col1,
+    #Gallery .content .col2,
+    #Gallery .content .col3,
+    #Gallery blockquote,
+    #Reviews .titleContainer,
+    #Reviews .content .col1,
+    #Gallery .secondary
+    {
+        height: auto !important;
+        float: none;
+        width: auto;
+    }
+    #Gallery .col1 >div:nth-of-type(3)
+    {
+        border: none;
+        padding-bottom: 10px;
+    }
+    .nameAttribute
+    {
+        max-width: 70% !important;
+    }
+
+    .square
+    {
+        float: none;
+        width: auto;
+    }
+
+    .titleContainer.bottomBorder
+    {
+        border: none;
+        padding:10px 0;
+    }
+
+    .descriptor.style2,
+    .descriptor.style2 h2
+    {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    #Reviews .col1
+    {
+        border-top: 1px solid #CCC;
+    }
+
+    #Reviews .pageTitle.style2
+    {
+        width: auto;
+    }
+
+    #About .descriptor p,
+    #FAQ .descriptor p
+    {
+        padding-top: initial;
+    }
+
+    .secondaryPageContent *
+    {
+        text-align: left !important;
+    }
+
+    .iconContainer
+    {
+        display: none;
+    }
+
+    .thumbContent
+    {
+        margin-left: 3%;
+    }
+
+    .pageContent:first-of-type
+    {
+        border-top: 1px solid #CCC;
+    }
+
+    #Contact .linkers img,
+    #Subscribe .linkers img
+    {
+        display: block;
+        width: 30px;
+        /* margin: auto; */
+        padding: 7px 0;
+        min-width: 1px;
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        height: 30px;
+    }
+
+   #Contact .linkers > div > div,
+   #Subscribe .linkers > div > div
+    {
+        height: 100% !important;
+        float: left;
+    }
+   .col3
+   {
+       display: none;
+   }
+   #Order .content .secondaryPageContent img
+    {
+        width: 95%;
+        margin: 10px;
+        padding: 5px;
+    }
+
+}
