@@ -8,43 +8,51 @@ export default class Contact extends React.Component {
             email: '',
             subject: '',
             question: ''
+
         }
-        this.handleName = this.handleName.bind(this);
-        this.handleEmail = this.handleEmail.bind(this);
-        this.handleSubject = this.handleSubject.bind(this);
-        this.handleQuestion = this.handleQuestion.bind(this);
-        this.handleAll = this.handleAll.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        // this.handleEmail = this.handleEmail.bind(this);
+        // this.handleSubject = this.handleSubject.bind(this);
+        // this.handleQuestion = this.handleQuestion.bind(this);
+        this.onSubmt = this.onSubmit.bind(this);
     }
 
-    handleName(e) {
+    handleChange(e) {
         e.preventDefault();
-        let setName = e.target.value;
-        this.setState({ name: setName });
-        console.log('NAME: ', setName);
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+        console.log('In handleChange:');
         
     }
-    handleEmail(e) {
-        e.preventDefault();
-        let setEmail = e.target.value;
-        this.setState({ email: setEmail });
-        console.log('EMAIL: ', setEmail);
-    }
-    handleSubject(e) {
-        e.preventDefault();
-        let setSubject = e.target.value;
-        this.setState({ subject: setSubject });
-        console.log('SUBJECT: ', setSubject);
-    }
-    handleQuestion(e) {
-        e.preventDefault();
-        let setQuestion = e.target.value;
-        this.setState({ question: setQuestion });
-        console.log('Question: ', setQuestion);
-    }
+    // handleEmail(e) {
+    //     e.preventDefault();
+    //     let setEmail = e.target.value;
+    //     this.setState({ email: setEmail });
+    //     console.log('EMAIL: ', setEmail);
+    // }
+    // handleSubject(e) {
+    //     e.preventDefault();
+    //     let setSubject = e.target.value;
+    //     this.setState({ subject: setSubject });
+    //     console.log('SUBJECT: ', setSubject);
+    // }
+    // handleQuestion(e) {
+    //     e.preventDefault();
+    //     let setQuestion = e.target.value;
+    //     this.setState({ question: setQuestion });
+    //     console.log('Question: ', setQuestion);
+    // }
 
-    handleAll(e) {
+    onSubmit = (e) => {
         e.preventDefault();
-    }
+        this.setState({ 
+            name: e.target.value,
+            email: e.target.value,
+            subject: e.target.value,
+            question: e.target.value,})
+        console.log('in submit: ', this.state)
+     }
 
     render() {
         return <React.Fragment>
@@ -66,12 +74,12 @@ export default class Contact extends React.Component {
                 </div>
 
                 <div className="contact">
-                    <form onSubmit={this.handleAll}>
-                        <input type="text" placeholder="name" onChange={this.handleName}></input>
-                        <input type="text" placeholder="email" onChange={this.handleEmail}></input>
-                        <input type="text" placeholder="subject" onChange={this.handleSubject}></input>
-                        <input type="text" placeholder="your question" onChange={this.handleQuestion}></input>
-                        <button>Send Message</button>
+                    <form name="contact" onSubmit={this.onSubmit}>
+                        <input name="name" type="text" placeholder="name" onChange={this.handleChange}></input>
+                        <input name="email" type="text" placeholder="email" onChange={this.handleChange}></input>
+                        <input name="subject" type="text" placeholder="subject" onChange={this.handleChange}></input>
+                        <input name="question" type="text" placeholder="your question" onChange={this.handleChange}></input>
+                        <button type="submit">Send Message</button>
                     </form>
                 </div>
 
