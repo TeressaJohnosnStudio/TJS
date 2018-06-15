@@ -11,48 +11,24 @@ export default class Contact extends React.Component {
 
         }
         this.handleChange = this.handleChange.bind(this);
-        // this.handleEmail = this.handleEmail.bind(this);
-        // this.handleSubject = this.handleSubject.bind(this);
-        // this.handleQuestion = this.handleQuestion.bind(this);
         this.onSubmt = this.onSubmit.bind(this);
     }
 
     handleChange(e) {
         e.preventDefault();
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-        console.log('In handleChange:');
-        
+        this.setState({ [e.target.name]: e.target.value })
     }
-    // handleEmail(e) {
-    //     e.preventDefault();
-    //     let setEmail = e.target.value;
-    //     this.setState({ email: setEmail });
-    //     console.log('EMAIL: ', setEmail);
-    // }
-    // handleSubject(e) {
-    //     e.preventDefault();
-    //     let setSubject = e.target.value;
-    //     this.setState({ subject: setSubject });
-    //     console.log('SUBJECT: ', setSubject);
-    // }
-    // handleQuestion(e) {
-    //     e.preventDefault();
-    //     let setQuestion = e.target.value;
-    //     this.setState({ question: setQuestion });
-    //     console.log('Question: ', setQuestion);
-    // }
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.setState({ 
+        this.setState({
             name: e.target.value,
             email: e.target.value,
             subject: e.target.value,
-            question: e.target.value,})
-        console.log('in submit: ', this.state)
-     }
+            question: e.target.value,
+        })
+        console.log('Submission Content:', this.state)
+    }
 
     render() {
         return <React.Fragment>
@@ -74,12 +50,12 @@ export default class Contact extends React.Component {
                 </div>
 
                 <div className="contact">
-                    <form name="contact" onSubmit={this.onSubmit}>
+                    <form name="contact" action="/send-email" method="post" onSubmit={this.onSubmit}>
                         <input name="name" type="text" placeholder="name" onChange={this.handleChange}></input>
                         <input name="email" type="text" placeholder="email" onChange={this.handleChange}></input>
                         <input name="subject" type="text" placeholder="subject" onChange={this.handleChange}></input>
                         <input name="question" type="text" placeholder="your question" onChange={this.handleChange}></input>
-                        <button type="submit">Send Message</button>
+                        <button>Send Message</button>
                     </form>
                 </div>
 
