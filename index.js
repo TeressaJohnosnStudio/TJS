@@ -22,28 +22,28 @@ instance.waitUntilValid(() => {
 
 //NODEMAILER -- Contact Form: 
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD
-  }
-});
+// var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: process.env.EMAIL,
+//     pass: process.env.PASSWORD
+//   }
+// });
 
-var mailOptions = {
-  from: process.env.EMAIL,
-  to: process.env.EMAIL,
-  subject: 'TEST EMAIL!',
-  text: 'It worked!!'
-};
+// var mailOptions = {
+//   from: process.env.EMAIL,
+//   to: process.env.EMAIL,
+//   subject: 'TEST EMAIL!',
+//   text: 'It worked!!'
+// };
 
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log('YOU\'VE GOT ERROR!!', error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log('YOU\'VE GOT ERROR!!', error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
