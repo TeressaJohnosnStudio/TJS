@@ -15,11 +15,13 @@ const config = {
         loader: ["babel-loader"],
         exclude: /node_modules/
       },
-      {test: /\.(scss|css)$/,
+      {
+        test: /\.(scss|css)$/,
         loader: [
         "style-loader",
         "css-loader",
-        "sass-loader"
+        "sass-loader",
+        "postcss-loader"
       ]},
     ]
   },
