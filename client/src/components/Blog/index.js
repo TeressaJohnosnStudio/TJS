@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class Blog extends React.Component {
+export default class Blog extends Component {
     constructor(props){
         super(props);
     }
@@ -12,9 +12,7 @@ export default class Blog extends React.Component {
                 <p>Date</p>
                 <p>Content</p>
             </div>
-
-
         </React.Fragment>
     }
-    
+
 }
