@@ -22,10 +22,12 @@ export default class About extends React.Component {
         let data = new FormData();
         console.log('onSubmit this.state.image', this.state.image)
         data.append('image', this.state.image);
+        console.log('onSubmit data.append', this.state.image);
 
         axios.post('/api/assets', data)
         .then(res => res.data)
         .catch(err => err.message)
+        console.log('axios', axios.post('/api/assets', data));
     }
 
     render() {
