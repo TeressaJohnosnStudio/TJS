@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-// import { ENGINE_METHOD_DIGESTS } from 'constants';
 
 export default class About extends React.Component {
     constructor(props) {
@@ -15,15 +14,13 @@ export default class About extends React.Component {
         this.setState({
             image: event.target.files[0]
         })
-        console.log('etf', event.target.files[0]);
+        console.log('onChange event.target.files', event.target.files[0]);
     }
 
     onSubmit = (event) => {
         event.preventDefault();
-        // let data = new FormData();
-        // data.append('');
         let data = new FormData();
-        console.log('file', this.state.image)
+        console.log('onSubmit this.state.image', this.state.image)
         data.append('image', this.state.image);
 
         axios.post('/api/assets', data)
