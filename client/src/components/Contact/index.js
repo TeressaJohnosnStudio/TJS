@@ -50,7 +50,7 @@ export default class Contact extends React.Component {
                 </div>
 
                 <div className="contact">
-                    <form name="contact" action="/send-email" method="post" onSubmit={this.onSubmit}>
+                    <form name="contact" action="/send-email" method="POST" onSubmit={this.onSubmit}>
                         <input name="name" type="text" placeholder="name" onChange={this.handleChange}></input>
                         <input name="email" type="text" placeholder="email" onChange={this.handleChange}></input>
                         <input name="subject" type="text" placeholder="subject" onChange={this.handleChange}></input>
