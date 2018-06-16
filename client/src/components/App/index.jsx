@@ -26,7 +26,7 @@ class App extends React.Component {
         <div id="container">
           <AdminNav />
           <Navigation />
-<<<<<<< HEAD
+
           <Route exact path="/" component={Home} />
           <Route path="/subscribe" component={Subscription} />
           <Route path="/gallery" component={Gallery} />
@@ -36,19 +36,7 @@ class App extends React.Component {
           <Route path="/reviews" component={Reviews} />
           <Route path="/contact" component={Contact} />
           <Route path="/blog" component={Blog} />
-=======
-          <div id="content">
-            <Route exact path="/" component={Home} />
-            <Route path="/subscribe" component={Subscription} />
-            <Route path="/gallery" component={Gallery} />
-            <Route path="/info" component={Info} />
-            <Route path="/faq" component={FAQ} />
-            <Route path="/reviews" component={Reviews} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/blog" component={Blog} />
-            <Route path="/admin/blog/add" component={BlogForm} />
-          </div>
->>>>>>> 2085a3586c841448a5f674ca44a0f2dba3134138
+
         </div>
       </BrowserRouter>
     )
