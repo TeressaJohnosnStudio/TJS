@@ -2,13 +2,14 @@ require('dotenv').config();
 
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
+const fs = require('fs');
 
 const router = require('express').Router();
 
 const path = require('path');
 
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/'});
+const upload = multer({ dest: 'upload/'});
 
 const Assets = require('../models/Assets');
 
@@ -18,8 +19,8 @@ router.route('/assets')
       .then(assets => res.json(assets))
       .catch(err => res.send(err));
   })
-  .post(upload.single('asset'), (req, res, next) => {
-    console.log('GOT', req.file);
+  .post(upload.single('image'), (req, res, next) => {
+    console.log('GOT req', req);
     
        next = path.extname(req.file.originalname);
     
@@ -30,7 +31,7 @@ router.route('/assets')
            Body: fs.createReadStream(req.file.path)
        };
        console.log('uploading...');
-       s3.upload(params, (s3Data) => { // error functionality???
+       s3.upload(params, (err, s3Data) => { // error functionality???
            console.log('uploaded', s3Data);
            let asset = new Asset({
                title: req.body.title,
