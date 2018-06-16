@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import './style.scss';
 
 export default class Navigation extends React.Component {
   render() {

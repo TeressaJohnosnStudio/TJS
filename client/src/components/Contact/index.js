@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class Contact extends React.Component {
     constructor(props) {
@@ -10,8 +11,9 @@ export default class Contact extends React.Component {
             question: ''
 
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.onSubmt = this.onSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+
     }
 
     handleChange(e) {
@@ -19,15 +21,49 @@ export default class Contact extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    onSubmit = (e) => {
+    // onSubmit = (e) => {
+    //     e.preventDefault();
+    //     this.setState({
+    //         name: e.target.value,
+    //         email: e.target.value,
+    //         subject: e.target.value,
+    //         question: e.target.value,
+    //     })
+    //     console.log('Submission Content:', this.state)
+    // }
+
+ 
+    handleSubmit(e) {
         e.preventDefault();
+        const name = e.target.value;
+        const email = e.target.value;
+        const subject = e.target.value;
+        const message = e.target.value;
         this.setState({
             name: e.target.value,
             email: e.target.value,
             subject: e.target.value,
             question: e.target.value,
         })
-        console.log('Submission Content:', this.state)
+        console.log('Submission Content:', this.state);
+
+        axios({
+            method: "POST", 
+            url:"http://localhost:3000/", 
+            data: {
+                name: name,   
+                email: email,  
+                subject: subject,
+                messsage: message
+            }
+        }).then((response)=>{
+            if (response.data.msg === 'success'){
+                alert("Message Sent."); 
+                this.resetForm()
+            }else if(response.data.msg === 'fail'){
+                alert("Message failed to send.")
+            }
+        })
     }
 
     render() {
@@ -50,12 +86,12 @@ export default class Contact extends React.Component {
                 </div>
 
                 <div className="contact">
-                    <form name="contact" action="/send-email" method="POST" onSubmit={this.onSubmit}>
-                        <input name="name" type="text" placeholder="name" onChange={this.handleChange}></input>
-                        <input name="email" type="text" placeholder="email" onChange={this.handleChange}></input>
-                        <input name="subject" type="text" placeholder="subject" onChange={this.handleChange}></input>
-                        <input name="question" type="text" placeholder="your question" onChange={this.handleChange}></input>
-                        <button>Send Message</button>
+                <form action="/contact" onSubmit={this.handleSubmit} name="contact-form" id="contact-form" method="POST">
+                        <input id="name" name="name" type="text" placeholder="name" required="required" onChange={this.handleChange}></input>
+                        <input id="email" name="email" type="text" placeholder="email" required="required" onChange={this.handleChange}></input>
+                        <input id="subject" name="subject" type="text" placeholder="subject" required="required" onChange={this.handleChange}></input>
+                        <input id="question" name="question" type="text" placeholder="your question" required="required" onChange={this.handleChange}></input>
+                        <button value="submit">Send Message</button>
                     </form>
                 </div>
 
