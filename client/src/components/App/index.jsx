@@ -12,7 +12,8 @@ import Info from '../Info';
 import Reviews from '../Reviews';
 import Blog from '../Blog';
 import Subscription from '../Subscription';
-
+import BlogForm from '../Blog/BlogForm';
+import AdminNav from '../AdminNav';
 
 class App extends React.Component {
   constructor(props){
@@ -23,7 +24,9 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div id="container">
+          <AdminNav />
           <Navigation />
+
           <Route exact path="/" component={Home} />
           <Route path="/subscribe" component={Subscription} />
           <Route path="/gallery" component={Gallery} />
