@@ -4,6 +4,11 @@ export default class About extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    onSubmit = (event) => {
+        console.log('event', event);
+    };
+
     render() {
         return <React.Fragment>
             <div className="left">
@@ -17,7 +22,11 @@ export default class About extends React.Component {
                 </div>
 
                 <div className="family-photo">
-                    <img></img>
+                    <form encType="multipart/form-data" action="" onSubmit={this.onSubmit}>
+                        <input type="file" />
+                        <input type="button" value="upload" />
+                    </form>
+                
                 </div>
             </div>
 

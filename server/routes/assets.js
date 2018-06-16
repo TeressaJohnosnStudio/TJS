@@ -19,7 +19,7 @@ router.route('/assets')
       .catch(err => res.send(err));
   })
   .post(upload.single('asset'), (req, res, next) => {
-    // console.log('GOT', req.file);
+    console.log('GOT', req.file);
     
        next = path.extname(req.file.originalname);
     
@@ -29,9 +29,9 @@ router.route('/assets')
            Key: req.file.originalname,
            Body: fs.createReadStream(req.file.path)
        };
-    //    console.log('uploading...');
+       console.log('uploading...');
        s3.upload(params, (s3Data) => { // error functionality???
-        //    console.log('uploaded', s3Data);
+           console.log('uploaded', s3Data);
            let asset = new Asset({
                title: req.body.title,
                content: req.body.content,
@@ -39,7 +39,7 @@ router.route('/assets')
            });
            asset.save()
            .then((asset) => {
-            //    console.log('saved', asset);
+               console.log('saved', asset);
                res.send(asset);
            });
        }); 
