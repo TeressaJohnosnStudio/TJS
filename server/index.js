@@ -8,7 +8,7 @@ const middleware = require('webpack-dev-middleware');
 const mongoose = require('mongoose');
 const instance = middleware(compiler);
 const blogRouter = require('./routes/blog');
-const assetsRouter = require('./router/assets');
+const assetsRouter = require('./routes/assets');
 const bodyParser = require('body-parser');
 
 app.use('client', express.static(`${__dirname}/client`));
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 })
 
 instance.waitUntilValid(() => {
-  console.log('package is valid');
+  // console.log('package is valid');
 });
 
 const PORT = process.env.PORT || 3000;
@@ -38,7 +38,7 @@ server.start = () => {
      }
 
      server.http = app.listen(PORT, () => {
-       console.log(`Listening to port ${PORT}`);
+      //  console.log(`Listening to port ${PORT}`);
        server.isOn = true;
        mongoose.connect(process.env.MONGODB_URI);
        return resolve(server);
