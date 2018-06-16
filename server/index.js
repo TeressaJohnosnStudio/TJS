@@ -8,6 +8,7 @@ const middleware = require('webpack-dev-middleware');
 const mongoose = require('mongoose');
 const instance = middleware(compiler);
 const blogRouter = require('./routes/blog');
+const assetsRouter = require('./router/assets');
 const bodyParser = require('body-parser');
 
 app.use('client', express.static(`${__dirname}/client`));
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/api', blogRouter);
+app.use('/api', assetsRouter);
 
 app.get('/', (req, res) => {
   res.sendFile('index.html', { root: `${__dirname}/` });
