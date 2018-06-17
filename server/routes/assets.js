@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
-
+console.log("S3 OBJECT created" + s3[0]);
 const multer = require('multer');
 const upload = multer({ dest: 'upload/'});
 const fs = require('fs');
@@ -31,16 +31,23 @@ router.route('/assets')
            Body: fs.createReadStream(req.file.path)
        };
         console.log('uploading...');
-       s3.upload(params, (s3Data) => { // error functionality???
-           let asset = new Asset({
-               title: req.body.title,
-               content: req.body.content,
+        // console.log('req file', req.file) 
+        
+       s3.upload(params, (err, s3Data) => { // error functionality???
+            console.log("Attempting to upload to S3");
+           if(err) console.log(err);
+
+           console.log('HI')
+           let asset = {
+               title: req.file.originalname.split('.')[0],
                imageUrl: s3Data.Location
-            });
-           asset.save()
-           .then((asset) => {
-               res.send(asset);
-           });
+            };
+
+            console.log('asset', asset);
+
+            Assets.create(asset)
+            .then(asset => res.json(asset))
+            .catch(err => res.send(err))
        }); 
   });
 

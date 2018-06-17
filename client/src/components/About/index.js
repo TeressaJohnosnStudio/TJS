@@ -25,9 +25,10 @@ export default class About extends React.Component {
         console.log('onSubmit data.append', this.state.image);
 
         axios.post('/api/assets', data)
-        .then(res => res.data)
-        .catch(err => err.message)
-        console.log('axios', axios.post('/api/assets', data));
+        .then(res => {
+            return res;
+        })
+        .catch(err => console.log(err.message))
     }
 
     render() {
