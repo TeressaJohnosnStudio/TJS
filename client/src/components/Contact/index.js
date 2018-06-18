@@ -20,7 +20,7 @@ export default class Contact extends React.Component {
                 <div className="title">
                     <p>contact</p>
                 </div>
-                <div className="description">It turns out that I enjoy meeting people and I love coffee. So if you like those same things, let's be friends. &#123;253&#125; 709–9509</div>
+                <div className="description">It turns out that I enjoy meeting people and I love coffee. So if you like those same things, let&apos;s be friends. &#123;253&#125; 709–9509</div>
                 <div className="contact">
                     <form>
                         <input type="text" placeholder="name"></input>

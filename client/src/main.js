@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import configureStore from './store/configureStore';
 import App from './components/App';
+// playing with the existing css file
+// import '../../SandboxCSS/style.css';
 
 const store = configureStore();
 
