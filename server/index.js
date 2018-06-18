@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const instance = middleware(compiler);
 const blogRouter = require('./routes/blog');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 
 app.use('client', express.static(`${__dirname}/client`));
 app.use(instance);
@@ -21,12 +22,46 @@ app.get('/', (req, res) => {
   res.sendFile('index.html', { root: `${__dirname}/` });
 })
 
+//EMAIL COMPONENT
+app.get('/contact/send', (req, res) => {
+  console.log('IN FORM DATA: ')
+})
+
+nodemailer.createTestAccount((err, account) => {
+  let transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      port: 587,
+      secure: false, 
+      auth: {
+          user: process.env.EMAIL,
+          pass:  process.env.PASSWORD
+      }
+  });
+  let mailOptions = {
+      from: '"Fred Foo 👻" <foo@example.com>', // sender address
+      to: process.env.EMAIL,// list of receivers
+      subject: 'Hello ✔', // Subject line
+      text: 'Hello world?', // plain text body
+      html: '<b>Hello world?</b>' // html body
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+  });
+});
+
+
 instance.waitUntilValid(() => {
   console.log('package is valid');
 });
 
 const PORT = process.env.PORT || 3000;
 const server = (module.exports = {});
+
+
 
 server.isOn = false;
 server.start = () => {
