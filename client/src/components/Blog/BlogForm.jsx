@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState } from 'draft-js';
+import { createPost } from '../../actions/blogActions';
 import '../../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './style.scss';
+import { Redirect } from 'react-router-dom';
 
-export default class BlogForm extends Component {
+const mapDispatchToProps = dispatch => {
+  return {
+    createPost: post => dispatch(createPost(post))
+  }
+}
+
+class BlogForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: '',
       editorState: EditorState.createEmpty()
     }
+  }
+
+  static contextTypes = {
+    router: PropTypes.object
+  }
+
+  redirectToTarget = target => {
+    this.context.router.history.push(target);
   }
 
   onChange = e => {
@@ -21,8 +39,11 @@ export default class BlogForm extends Component {
     this.setState({ editorState })
   }
 
-  onSubmit = () => {
-    this.props.createBlog(this.state);
+  onSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+    this.props.createPost(this.state)
+    this.redirectToTarget('/blog');
   }
 
   render() {
@@ -43,3 +64,5 @@ export default class BlogForm extends Component {
     )
   }
 }
+
+export default connect(null, mapDispatchToProps)(BlogForm);
