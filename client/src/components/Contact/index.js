@@ -13,6 +13,7 @@ export default class Contact extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.sendEmail = this.sendEmail.bind(this)
 
     }
 
@@ -30,6 +31,10 @@ export default class Contact extends React.Component {
             subject: e.target.value,
             question: e.target.value
         })
+        console.log('FORM SUBMISSION: ', this.state)
+    };
+
+    sendEmail(name, email, subject, question) {
         fetch('/contact', {
             method: 'POST',
             headers: {
@@ -37,10 +42,11 @@ export default class Contact extends React.Component {
                 'Content-Type': 'application/json'
             },
             body: {
-                name: name,
-                email: email,
-                subject: subject,
-                question: question
+                test: 'BLAHHHH',
+                name: 'name',
+                email: 'email',
+                subject: 'subject',
+                question: 'question'
             }
         })
             .then((res) => res.json())
@@ -50,7 +56,6 @@ export default class Contact extends React.Component {
             .catch((err) => {
                 console.error('here is the error: ', err);
             })
-        console.log('Submission content: ', this.state)
     }
 
 
@@ -75,11 +80,11 @@ export default class Contact extends React.Component {
 
                 <div className="contact">
                     <form method="POST" action="contact" onSubmit={this.handleSubmit} >
-                        <input id="name" name="name" type="text" placeholder="name" required="required" onChange={this.handleChange}></input>
-                        <input id="email" name="email" type="text" placeholder="email" required="required" onChange={this.handleChange}></input>
-                        <input id="subject" name="subject" type="text" placeholder="subject" required="required" onChange={this.handleChange}></input>
-                        <input id="question" name="question" type="text" placeholder="your question" required="required" onChange={this.handleChange}></input>
-                        <button type="submit">Send Message</button>
+                        <input id="name" name="name" type="text" placeholder="name"  onChange={this.handleChange}></input>
+                        <input id="email" name="email" type="text" placeholder="email"  onChange={this.handleChange}></input>
+                        <input id="subject" name="subject"  type="text" placeholder="subject"  onChange={this.handleChange}></input>
+                        <input id="question"name="question" type="text" placeholder="your question"  onChange={this.handleChange}></input>
+                        <button type="submit" onClick={this.sendEmail}>Send Message</button>
                     </form>
                 </div>
 

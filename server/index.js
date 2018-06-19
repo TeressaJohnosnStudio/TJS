@@ -21,7 +21,6 @@ app.use('/api', blogRouter);
 
 //EMAIL COMPONENT
 app.post('/contact', (req, res) => {
-console.log('POST REQ: ', req.body)
     let transporter = nodemailer.createTransport({
       service: 'Gmail',
       port: 587,
@@ -31,20 +30,20 @@ console.log('POST REQ: ', req.body)
         pass: process.env.PASSWORD
       }
     });
-    let mailOptions = {
+    let message = {
       from: `${req.body.name}`, // sender address
       to: process.env.EMAIL,// list of receivers
       subject: `${req.body.subject}`, // Subject line
       text: `${req.body}`, // plain text body
       html: `${req.body}`// html body
     };
-    transporter.sendMail(mailOptions, (error, info) => {
+    transporter.sendMail(message, (error, info) => {
       if (error) {
         return console.log(error);
       }
       console.log('Message sent: %s', info.messageId);
-      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
+    console.log('POST REQ: ', req.body)
 });
 
 
