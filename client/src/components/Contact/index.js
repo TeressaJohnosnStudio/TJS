@@ -31,31 +31,16 @@ export default class Contact extends React.Component {
             subject: e.target.value,
             question: e.target.value
         })
-        console.log('FORM SUBMISSION: ', this.state)
+        console.log('FORM SUBMISSION: ', this.state);
+        let name = this.state.name;
+        let email = this.state.email;
+        let subject = this.state.subject;
+        let question = this.state.question;
+        this.sendEmail(name, email, subject, question);
     };
 
-    sendEmail(name, email, subject, question) {
-        fetch('/contact', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: {
-                test: 'BLAHHHH',
-                name: 'name',
-                email: 'email',
-                subject: 'subject',
-                question: 'question'
-            }
-        })
-            .then((res) => res.json())
-            .then((res) => {
-                console.log('here is the response: ', res);
-            })
-            .catch((err) => {
-                console.error('here is the error: ', err);
-            })
+    sendEmail = (name, email, subject, question) => {
+        axios.post('/contact', {name, email, subject, question})
     }
 
 
@@ -79,12 +64,12 @@ export default class Contact extends React.Component {
                 </div>
 
                 <div className="contact">
-                    <form method="POST" action="contact" onSubmit={this.handleSubmit} >
+                    <form onSubmit={this.handleSubmit} >
                         <input id="name" name="name" type="text" placeholder="name"  onChange={this.handleChange}></input>
                         <input id="email" name="email" type="text" placeholder="email"  onChange={this.handleChange}></input>
                         <input id="subject" name="subject"  type="text" placeholder="subject"  onChange={this.handleChange}></input>
                         <input id="question"name="question" type="text" placeholder="your question"  onChange={this.handleChange}></input>
-                        <button type="submit" onClick={this.sendEmail}>Send Message</button>
+                        <button type="submit">Send Message</button>
                     </form>
                 </div>
 

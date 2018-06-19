@@ -34,8 +34,11 @@ app.post('/contact', (req, res) => {
       from: `${req.body.name}`, // sender address
       to: process.env.EMAIL,// list of receivers
       subject: `${req.body.subject}`, // Subject line
-      text: `${req.body}`, // plain text body
-      html: `${req.body}`// html body
+      text: `${req.body.question}`, // plain text body
+      html: `<h3>Name: ${req.body.name}</h3>
+             <h4>Email: ${req.body.email}</h4>
+             <p>Subject: ${req.body.subject}</p>
+             <p>Question: ${req.body.question}</p>`// html body
     };
     transporter.sendMail(message, (error, info) => {
       if (error) {
