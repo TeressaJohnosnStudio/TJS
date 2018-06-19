@@ -18,39 +18,33 @@ app.use(bodyParser.json());
 
 app.use('/api', blogRouter);
 
-app.get('/', (req, res) => {
-  res.sendFile('index.html', { root: `${__dirname}/` });
-})
 
 //EMAIL COMPONENT
-app.get('/contact/send', (req, res) => {
-  console.log('IN FORM DATA: ')
-})
-
-nodemailer.createTestAccount((err, account) => {
-  let transporter = nodemailer.createTransport({
+app.post('/contact', (req, res) => {
+console.log('POST REQ: ', req.body)
+    let transporter = nodemailer.createTransport({
       service: 'Gmail',
       port: 587,
-      secure: false, 
+      secure: false,
       auth: {
-          user: process.env.EMAIL,
-          pass:  process.env.PASSWORD
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD
       }
-  });
-  let mailOptions = {
-      from: '"Fred Foo 👻" <foo@example.com>', // sender address
+    });
+    let mailOptions = {
+      from: `${req.body.name}`, // sender address
       to: process.env.EMAIL,// list of receivers
-      subject: 'Hello ✔', // Subject line
-      text: 'Hello world?', // plain text body
-      html: '<b>Hello world?</b>' // html body
-  };
-  transporter.sendMail(mailOptions, (error, info) => {
+      subject: `${req.body.subject}`, // Subject line
+      text: `${req.body}`, // plain text body
+      html: `${req.body}`// html body
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-          return console.log(error);
+        return console.log(error);
       }
       console.log('Message sent: %s', info.messageId);
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-  });
+    });
 });
 
 
@@ -66,16 +60,16 @@ const server = (module.exports = {});
 server.isOn = false;
 server.start = () => {
   return new Promise((resolve, reject) => {
-     if(server.isOn) {
-       return reject(new Error('Error, server is already on'))
-     }
+    if (server.isOn) {
+      return reject(new Error('Error, server is already on'))
+    }
 
-     server.http = app.listen(PORT, () => {
-       console.log(`Listening to port ${PORT}`);
-       server.isOn = true;
-       mongoose.connect(process.env.MONGODB_URI);
-       return resolve(server);
-     })
+    server.http = app.listen(PORT, () => {
+      console.log(`Listening to port ${PORT}`);
+      server.isOn = true;
+      mongoose.connect(process.env.MONGODB_URI);
+      return resolve(server);
+    })
   })
 }
 

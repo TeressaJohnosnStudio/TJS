@@ -18,7 +18,7 @@ export default class Contact extends React.Component {
 
     handleChange(e) {
         e.preventDefault();
-        this.setState({[e.target.name]: e.target.value})
+        this.setState({ [e.target.name]: e.target.value })
     }
 
 
@@ -30,8 +30,29 @@ export default class Contact extends React.Component {
             subject: e.target.value,
             question: e.target.value
         })
+        fetch('/contact', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: {
+                name: name,
+                email: email,
+                subject: subject,
+                question: question
+            }
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log('here is the response: ', res);
+            })
+            .catch((err) => {
+                console.error('here is the error: ', err);
+            })
         console.log('Submission content: ', this.state)
     }
+
 
     render() {
         return <React.Fragment>
@@ -53,7 +74,7 @@ export default class Contact extends React.Component {
                 </div>
 
                 <div className="contact">
-                    <form method="POST" action="contact/send" onSubmit={this.handleSubmit} >
+                    <form method="POST" action="contact" onSubmit={this.handleSubmit} >
                         <input id="name" name="name" type="text" placeholder="name" required="required" onChange={this.handleChange}></input>
                         <input id="email" name="email" type="text" placeholder="email" required="required" onChange={this.handleChange}></input>
                         <input id="subject" name="subject" type="text" placeholder="subject" required="required" onChange={this.handleChange}></input>
