@@ -1,27 +1,37 @@
 require('dotenv').config();
 
+const fs = require('fs');
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
-console.log("S3 OBJECT created" + s3[0]);
+
 const multer = require('multer');
-const upload = multer({ dest: 'upload/'});
-const fs = require('fs');
+const upload = multer({ dest: 'uploads/'});
+const path = require('path');
 
 const router = require('express').Router();
 
-const path = require('path');
+const Asset = require('../models/Asset');
 
-const Assets = require('../models/Assets');
+router.route('/test')
+    .post((req, res) => {
+        console.log('hello', req.body);
+        res.send('pong');
+});
 
 router.route('/assets')
   .get((req, res) => {
-    Assets.find()
+      console.log('inside .get');
+    Asset.find({})
       .then(assets => res.json(assets))
       .catch(err => res.send(err));
-  })
-  .post(upload.single('image'), (req, res, next) => {
-    // console.log('GOT req', req);
-    
+  });
+
+
+router.route('/assets')
+  .post((req, res, next) => {
+      console.log('GOT req', req.file);
+    //   upload.single('asset')
+  
        next = path.extname(req.file.originalname);
     
        let params = {
@@ -31,22 +41,20 @@ router.route('/assets')
            Body: fs.createReadStream(req.file.path)
        };
         console.log('uploading...');
-        // console.log('req file', req.file) 
         
-       s3.upload(params, (err, s3Data) => { // error functionality???
-            console.log("Attempting to upload to S3");
+       s3.upload(params, (err, s3Data) => {
+        console.log('uploaded', s3Data);
            if(err) console.log(err);
 
            console.log('HI')
-           let asset = {
-               title: req.file.originalname.split('.')[0],
+           let asset = new Asset ({
+            //    title: req.file.originalname.split('.')[0],
                imageUrl: s3Data.Location
-            };
-
+            });
             console.log('asset', asset);
 
             Assets.create(asset)
-            .then(asset => res.json(asset))
+            .then(asset => res.send(asset))
             .catch(err => res.send(err))
        }); 
   });
