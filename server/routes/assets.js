@@ -31,8 +31,8 @@ router.route('/assets')
            Key: req.file.originalname,
            Body: fs.createReadStream(req.file.path)
        };
-    //    console.log('uploading...');
-       s3.upload(params, (s3Data) => { // error functionality???
+       console.log('uploading...');
+       s3.upload(params, (err, s3Data) => {
            console.log('uploaded', s3Data);
            let asset = new Asset({
                title: req.body.title,
