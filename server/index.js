@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use('/api', blogRouter);
 
 
-//EMAIL COMPONENT
+//CONTACT COMPONENT - EMAIL FORM
 app.post('/contact', (req, res) => {
     let transporter = nodemailer.createTransport({
       service: 'Gmail',
@@ -51,6 +51,35 @@ app.post('/contact', (req, res) => {
 
 
 //WILD AND GATHERED COMPONENT
+//PICK ME
+app.post('/subscribe', (req, res) => {
+  let transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD
+    }
+  });
+  let message = {
+    from: `Wild and Gathered Customer`, // sender address
+    to: process.env.EMAIL,// list of receivers
+    subject: `Oh, pick me!`, // Subject line
+    text: `${req.body.question}`, // plain text body
+    html: `<h1>Oh, pick me! :</h1>
+           <p>Flower Selection: ${req.body.flowerSelect}</p>
+           <p>Question: ${req.body.question}</p>`// html body
+  };
+  transporter.sendMail(message, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+    console.log('Message sent: %s', info.messageId);
+  });
+  console.log('POST REQ: ', req.body)
+});
+
 
 
 instance.waitUntilValid(() => {
