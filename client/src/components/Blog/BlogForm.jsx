@@ -8,6 +8,7 @@ import '../../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.cs
 import './style.scss';
 import { Redirect } from 'react-router-dom';
 
+
 const mapDispatchToProps = dispatch => {
   return {
     createPost: post => dispatch(createPost(post))

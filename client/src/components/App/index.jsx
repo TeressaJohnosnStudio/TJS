@@ -17,6 +17,8 @@ import BlogForm from '../Blog/BlogForm';
 import Post from '../Blog/Post';
 import AdminNav from '../AdminNav';
 import { BrowserHistory } from 'history';
+// import './style.scss';
+
 
 class App extends React.Component {
   constructor(props){
