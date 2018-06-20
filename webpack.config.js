@@ -17,12 +17,23 @@ const config = {
       },
       {
         test: /\.(scss|css)$/,
+          
         loader: [
         "style-loader",
         "css-loader",
         "sass-loader",
         "postcss-loader"
       ]},
+      { 
+        test: /\.(png|jpg|gif)$/, 
+
+        loader: 'url-loader?limit=10000' 
+      },
+      { 
+        test: /\.(png|jpg)$/, 
+        
+        loader: 'file-loader'
+      },
     ]
   },
   resolve: {
