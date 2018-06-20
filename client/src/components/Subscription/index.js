@@ -22,16 +22,50 @@ export default class Subscription extends React.Component {
                 <div id="option1">
                     <img />
                     <p>YES, LOVELY.</p>
+                    <p>$75.00</p>
+                    <p>Flowers have been known to bring happy energy to a space. This sweet little number will brighten it up and leave you feeling balanced and lively. This image is an example of size and feel. All flowers and foliage are season specific, but of course feel free to leave comments and we'll do our best to accomodate.</p>
+                    <form id="lovely">
+                        <select className="flower-select">
+                            <option value="lovely-weekly">Yes, Lovely. : $75.00 USD - weekly </option>
+                            <option value="lovely-monthly">Yes, Lovely. : $75.00 USD - monthly </option>
+                        </select>
+                        <p>Tell us more about your style and preferences (if you want to)</p>
+                        <input></input>
+                        <button>BRING IT HOME</button>
+                    </form>
                 </div>
 
                 <div id="option2">
                     <img />
                     <p>OH, PICK ME!</p>
+                    <p>$150.00</p>
+                    <p>Ushering into thoughtful arrangement that which grows wild and free. These are the words to describe our aesthetic, and the words by which we design. Who wouldn't want to enter a space with such lovely thoughtfulness? Appealing to the eyes and to the imagination, this size is great for an entryway, foyer, or a living room and packed with sublime flowers that make an impressive statement. All flowers and foliage are season specific, but of course feel free to leave comments and we'll do our best to accommodate.
+                    American grown | Locally resourced | Delivered Thursdays</p>
+                    <form id="pickMe">
+                        <select className="flower-select">
+                            <option value="pickMe-weekly">Oh, pick me! : $150.00 USD - weekly </option>
+                            <option value="pickMe-monthly">Oh, pick me! : $150.00 USD - monthly </option>
+                        </select>
+                        <p>Tell us more about your style and preferences (if you want to)</p>
+                        <input></input>
+                        <button>BRING IT HOME</button>
+                    </form>
                 </div>
 
                 <div id="option3">
                     <img />
                     <p>WHY, HELLO!</p>
+                    <p>$300.00</p>
+                    <p>Why, hello! Transform a space and respect its architecture, and for goodness sake, let's bring in some flowers! Dramatic, large, and boasting a large variety of blooms, this type of arrangement will turn heads and make them swoon. Perfect for grand entrances, reception desks, and spiraling staircases, this size will be a showstopper. All flowers and foliage are season specific, but of couse feel free to leave comments and we'll do our best to accommodate. American grown | Locally resourced | Delivered Thursdays</p>
+                    <form id="pickMe">
+                        <select className="flower-select">
+                            <option value="whyHello-weekly">Why, hello! : $300.00 USD - weekly </option>
+                            <option value="whyHello-monthly">Why, hello!  : $300.00 USD - monthly </option>
+                        </select>
+                        <p>Tell us more about your style and preferences (if you want to)</p>
+                        <input></input>
+                        <button>BRING IT HOME</button>
+                    </form>
                 </div>
             </div>
         </React.Fragment>

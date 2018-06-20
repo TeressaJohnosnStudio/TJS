@@ -50,6 +50,9 @@ app.post('/contact', (req, res) => {
 });
 
 
+//WILD AND GATHERED COMPONENT
+
+
 instance.waitUntilValid(() => {
   console.log('package is valid');
 });
