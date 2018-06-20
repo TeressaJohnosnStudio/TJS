@@ -67,7 +67,7 @@ app.post('/subscribe', (req, res) => {
     to: process.env.EMAIL,// list of receivers
     subject: `Oh, pick me!`, // Subject line
     text: `${req.body.question}`, // plain text body
-    html: `<h1>Oh, pick me! :</h1>
+    html: `<h1>Oh, pick me!</h1>
            <p>Flower Selection: ${req.body.flowerSelect}</p>
            <p>Question: ${req.body.question}</p>`// html body
   };

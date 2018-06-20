@@ -51,8 +51,8 @@ export default class Subscription extends React.Component {
                     <p>Flowers have been known to bring happy energy to a space. This sweet little number will brighten it up and leave you feeling balanced and lively. This image is an example of size and feel. All flowers and foliage are season specific, but of course feel free to leave comments and we'll do our best to accomodate.</p>
                     <form id="lovely" onSubmit={this.handleSubmit}>
                         <select name="flowerSelect" onChange={this.handleChange}>
-                            <option name="lovelyWeekly" value="Lovely Weekly">Yes, Lovely. : $75.00 USD - weekly </option>
-                            <option name="lovelyWonthly" value="Lovely Monthly">Yes, Lovely. : $75.00 USD - monthly </option>
+                            <option name="lovelyWeekly" value="Yes, Lovely --- Weekly">Yes, Lovely. : $75.00 USD - weekly </option>
+                            <option name="lovelyWonthly" value="Yes, Lovely --- Monthly">Yes, Lovely. : $75.00 USD - monthly </option>
                         </select>
                         <p>Tell us more about your style and preferences (if you want to)</p>
                         <input name="question"   type="text" onChange={this.handleChange}></input>
@@ -60,24 +60,24 @@ export default class Subscription extends React.Component {
                     </form>
                 </div>
 
-                {/* <div id="option2">
+                 <div id="option2">
                     <img />
                     <p>OH, PICK ME!</p>
                     <p>$150.00</p>
                     <p>Ushering into thoughtful arrangement that which grows wild and free. These are the words to describe our aesthetic, and the words by which we design. Who wouldn't want to enter a space with such lovely thoughtfulness? Appealing to the eyes and to the imagination, this size is great for an entryway, foyer, or a living room and packed with sublime flowers that make an impressive statement. All flowers and foliage are season specific, but of course feel free to leave comments and we'll do our best to accommodate.
                     American grown | Locally resourced | Delivered Thursdays</p>
-                    <form id="pickMe">
-                        <select className="flower-select">
-                            <option value="pickMe-weekly">Oh, pick me! : $150.00 USD - weekly </option>
-                            <option value="pickMe-monthly">Oh, pick me! : $150.00 USD - monthly </option>
+                    <form id="pickMe" onSubmit={this.handleSubmit}>
+                        <select name="flowerSelect" className="flowerSelect" onChange={this.handleChange}>
+                            <option name="pickMeWeekly" value="Oh, pick me! ---- WEEKLY">Oh, pick me! : $150.00 USD - weekly </option>
+                            <option name="pickMeMonthly" value="Oh, pick me! --- MONTHLY">Oh, pick me! : $150.00 USD - monthly </option>
                         </select>
                         <p>Tell us more about your style and preferences (if you want to)</p>
-                        <input></input>
-                        <button>BRING IT HOME</button>
+                        <input name="question" type="text" onChange={this.handleChange}></input>
+                        <button type="submit">BRING IT HOME</button>
                     </form>
                 </div>
 
-                <div id="option3">
+                {/*<div id="option3">
                     <img />
                     <p>WHY, HELLO!</p>
                     <p>$300.00</p>
