@@ -1,6 +1,6 @@
 import React from 'React';
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Route
 } from 'react-router-dom';
 import Navigation from '../Navigation';
@@ -14,7 +14,9 @@ import Reviews from '../Reviews';
 import Blog from '../Blog';
 import Subscription from '../Subscription';
 import BlogForm from '../Blog/BlogForm';
+import Post from '../Blog/Post';
 import AdminNav from '../AdminNav';
+import { BrowserHistory } from 'history';
 
 class App extends React.Component {
   constructor(props){
@@ -23,7 +25,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <Router>
         <div id="container">
           <AdminNav />
           <Navigation />
@@ -39,7 +41,7 @@ class App extends React.Component {
           <Route path="/blog" component={Blog} />
 
         </div>
-      </BrowserRouter>
+      </Router>
     )
   }
 }
