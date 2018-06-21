@@ -29,7 +29,7 @@ class Blog extends Component {
             : <PostList posts={posts} />
           }
         </div>
-        <div>{this.props.children}</div>
+
       </div>
     )
   }
@@ -38,7 +38,7 @@ class Blog extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     updatePost: post => dispatch(updatePost(post)),
-    deletePost: post => dispatch(deletePos(post)),
+    deletePost: post => dispatch(deletePost(post)),
     fetchPosts: () => dispatch(fetchPosts())
   }
 }

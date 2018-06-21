@@ -1,20 +1,9 @@
 import React from 'react';
-// import axios from 'axios';
 import Upload from '../Upload'
 import './style.scss';
 
 
 export default class About extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            image: null,
-        };
-    }
-
-    
-
     render() {
         return <React.Fragment>
             <div className="left">
