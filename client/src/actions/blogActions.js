@@ -1,7 +1,14 @@
-const axios = require('axios');
-
+// Update post actions
+export const UPDATING_POST_START = 'UPDATING_POST_START';
+export const UPDATING_POST_END = 'UPDATING_POST_END';
 export const UPDATE_POST = 'UPDATE_POST';
-export const POST_DELETE = 'DELETE_POST';
+export const UPDATE_POST_SUCCESS = 'UPDATE_POST_SUCCESS';
+export const UPDATE_POST_FAILURE = 'UPDATE_POST_FAILURE';
+
+// Delete post actions
+export const DELETE_POST = 'DELETE_POST';
+export const DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS';
+export const DELETE_POST_FAILURE = 'DELETE_POST_FAILURE';
 
 //Fetch all post actions
 export const FETCH_POSTS = 'FETCH_POSTS';
@@ -18,7 +25,7 @@ export const CREATE_POST = 'CREATE_POST';
 export const CREATE_POST_SUCCESS = 'CREATE_POST_SUCCESS';
 export const CREATE_POST_FAILURE = 'CREATE_POST_FAILURE';
 
-import { getPost, getPosts, addPost } from '../api/blogApi';
+import { getPost, getPosts, addPost, editPost, removePost } from '../api/blogApi';
 
 //Fetch Posts
 export const fetchPosts = () => {
@@ -34,7 +41,6 @@ export const fetchPosts = () => {
 }
 
 export const fetchPostsSuccess = posts => {
-  console.log('fetch posts', posts.data);
   return { type: FETCH_POSTS_SUCCESS, posts: posts.data }
 }
 
@@ -56,7 +62,6 @@ export const fetchPost = post => {
 }
 
 export const fetchPostSuccess = post => {
-  console.log('fetch post', posts.data);
   return { type: FETCH_POST_SUCCESS, post: post.data }
 }
 
@@ -85,5 +90,53 @@ export const createPostFailure = (post) => {
   return { type: CREATE_POST_FAILURE, post }
 }
 
-export const updatePost = post => ({ type: UPDATE_BLOG, payload: post });
-export const deletePost = post => ({ type: DELETE_BLOG, payload: post });
+// Delete Post
+export const deletePost = postId => {
+  return function(dispatch) {
+    return removePost(postId)
+    .then(post => {
+      dispatch(deletePostSuccess)
+    })
+    .catch(err => {
+      dispatch(deletePostFailure)
+    })
+  }
+};
+
+export const deletePostSuccess = post => {
+  return { type: DELETE_POST_SUCCESS, post }
+}
+
+export const deletePostFailure = post => {
+  return { type: DELETE_POST_FAILURE, post }
+}
+
+// Update post
+export const updatePost = post => {
+  return function(dispatch) {
+    return editPost(post)
+    .then(post => {
+      console.log('dispatching update post success')
+      dispatch(updatePostSuccess)
+    })
+    .catch(err => {
+      dispatch(updatePostFailure)
+    })
+  }
+};
+
+export const updatingPostStart = () => {
+  return { type: UPDATING_POST_START, isEditing: true }
+}
+
+export const updatingPostEnd = post => {
+  return { type: UPDATING_POST_END, isEditing: false }
+}
+
+export const updatePostSuccess = post => {
+  return { type: UPDATE_POST_SUCCESS, post }
+}
+
+export const updatePostFailure = post => {
+  return { type: UPDATE_POST_FAILURE, post }
+}
