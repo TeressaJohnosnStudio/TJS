@@ -51,7 +51,6 @@ app.post('/contact', (req, res) => {
 
 
 //WILD AND GATHERED COMPONENT
-//PICK ME
 app.post('/subscribe', (req, res) => {
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
