@@ -4,6 +4,7 @@ export default class About extends React.Component {
     constructor(props) {
         super(props);
     }
+    
     render() {
         return <React.Fragment>
             <div className="left">

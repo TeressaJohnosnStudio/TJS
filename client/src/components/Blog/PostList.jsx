@@ -21,8 +21,6 @@ class PostList extends Component {
             )
           })}
         </ul>
-
-        <Route path={`/blog/:_id`} component={Post} />
       </div>
     )
   }
