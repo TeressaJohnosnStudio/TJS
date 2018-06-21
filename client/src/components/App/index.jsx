@@ -8,6 +8,7 @@ import Home from '../Home';
 import Contact from '../Contact';
 import FAQ from '../FAQ';
 import Gallery from '../Gallery';
+import About from '../About';
 import Info from '../Info';
 import Reviews from '../Reviews';
 import Blog from '../Blog';
@@ -15,6 +16,8 @@ import Subscription from '../Subscription';
 import BlogForm from '../Blog/BlogForm';
 import Post from '../Blog/Post';
 import AdminNav from '../AdminNav';
+import './style.scss';
+
 import { connect } from 'react-redux';
 import { deletePost, updatingPostStart, updatingPostEnd } from '../../actions/blogActions';
 
@@ -55,7 +58,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/subscribe" component={Subscription} />
           <Route path="/gallery" component={Gallery} />
-          <Route path="/about" component={Info} />
+          <Route path="/about" component={About} />
           <Route path="/info" component={Info} />
           <Route path="/faq" component={FAQ} />
           <Route path="/reviews" component={Reviews} />
