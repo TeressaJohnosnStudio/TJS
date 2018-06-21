@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 
@@ -11,7 +9,7 @@ const router = require('express').Router();
 
 const path = require('path');
 
-const Assets = require('../models/Assets');
+const Asset = require('../models/Asset');
 
 router.route('/assets')
   .get((req, res) => {
@@ -31,8 +29,9 @@ router.route('/assets')
            Key: req.file.originalname,
            Body: fs.createReadStream(req.file.path)
        };
-       console.log('uploading...');
+       console.log('uploading...', params);
        s3.upload(params, (err, s3Data) => {
+           if(err) console.log(err);
            console.log('uploaded', s3Data);
            let asset = new Asset({
                title: req.body.title,

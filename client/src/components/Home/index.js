@@ -1,5 +1,5 @@
 import React from 'react';
-// import './style.scss';
+import './style.scss';
 
 
 export default class Home extends React.Component {
@@ -9,7 +9,7 @@ export default class Home extends React.Component {
     render(){
         return <React.Fragment>
             <div className="hero">
-                <img id="hero-img"></img>
+                <img src="" alt="Hero"/>
             </div>
 
             <div className="quote">

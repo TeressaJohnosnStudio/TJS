@@ -25,14 +25,16 @@ const config = {
         "postcss-loader"
       ]},
       { 
-        test: /\.(png|jpg|gif)$/, 
-
-        loader: 'url-loader?limit=10000' 
-      },
-      { 
         test: /\.(png|jpg)$/, 
-        
-        loader: 'file-loader'
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              useRelativePath: true
+            }  
+          }
+        ]
       },
     ]
   },

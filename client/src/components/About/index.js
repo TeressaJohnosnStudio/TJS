@@ -1,6 +1,7 @@
 import React from 'react';
-import axios from 'axios';
-// import './style.scss';
+// import axios from 'axios';
+import Upload from '../Upload'
+import './style.scss';
 
 
 export default class About extends React.Component {
@@ -12,25 +13,7 @@ export default class About extends React.Component {
         };
     }
 
-    onChange = (event) => {
-        this.setState({
-            image: event.target.files[0]
-        })
-        console.log('onChange event.target.files', event.target.files[0]);
-    }
-
-    onSubmit = (event) => {
-        event.preventDefault();
-        let data = new FormData();
-        console.log('onSubmit this.state.image', this.state.image)
-        data.append('image', this.state.image);
-        console.log('onSubmit data.append', this.state.image);
-
-        axios.post('/api/assets', data)
-        .then(res => res.data)
-        .catch(err => err.message)
-        console.log('axios', axios.post('/api/assets', data));
-    }
+    
 
     render() {
         return <React.Fragment>
@@ -45,14 +28,9 @@ export default class About extends React.Component {
                 </div>
 
                 <div className="family-photo">
-                    <form method="POST" encType="multipart/form-data" onSubmit={this.onSubmit}>
-                        <input type="file" onChange={this.onChange} name="image" />
-                        <input type="submit" value="upload" />
-                    </form>
-                
+                    <Upload />
                 </div>
             </div>
-
             <div className="right">
                 <div className="about-us">
                     <p>A LITTLE ABOUT US</p>
