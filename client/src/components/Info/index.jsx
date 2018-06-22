@@ -5,6 +5,9 @@ import medalion2 from './assets/greenWedding_process.jpg';
 import medalion3 from './assets/magnoliarogue.png';
 import medalion4 from './assets/seattleBride_process.png';
 import medalion5 from './assets/seattleMet_process.jpg';
+import philosophy from './assets/philosophy.png';
+import recycle from './assets/recycle.png';
+
 
 export default class Info extends React.Component {
     constructor(props){
@@ -29,12 +32,12 @@ export default class Info extends React.Component {
             <div className="right">
                 <div className="philosophy">
                     <p>PHILOSOPHY</p>
-                    <img id="icon"></img>
+                    <img src={philosophy}/>
                     <p>What makes us stand apart? Here’s a little secret. Ready? We are in this business because we love people and we love building relationships. Flowers and designing are the bonus, and as with any signature, you’re vetting us based on the cohesion of our style, our aesthetic, and our energy…But you must know that behind the artistry, there is a genuine love for people.</p>
                 </div>
                 
                 <div>
-                    <img id="recycle"></img>
+                    <img src={recycle}/>
                     <p>REDUCE, REUSE, WE GIVE:</p>
                     <p>For the clients who love cut flowers, but feel a twinge inside knowing their vase life is short, listen up. We are building partnerships within our community to share your leftover flowers so more people can enjoy them while you’re enjoying your honeymoon. We think this is brilliant, and are really excited about it. Also, for a nominal fee, we can rearrange your flowers and deliver as a gift to a recipient of your choice.</p>
                 </div>
