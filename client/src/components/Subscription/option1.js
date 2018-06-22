@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import option1 from './assets/tjs_wild-gathered_011.jpg'
 
 export default class Subscription extends React.Component {
     constructor(props) {
@@ -40,7 +41,7 @@ export default class Subscription extends React.Component {
         return <React.Fragment>
                 <div>
                     <div id="option1-container">
-                        <p onClick={this.toggleOptions}>IMAGE 1</p>
+                        <img src={option1} onClick={this.toggleOptions} width="400" height="400"></img>
                         {this.state.show1 ?
                             <div id="option1"  >
                                 <p>YES, LOVELY.</p>

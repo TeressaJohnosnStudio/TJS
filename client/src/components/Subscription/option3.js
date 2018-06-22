@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import option3 from './assets/tjs_wild-gathered_013.jpg'
 
 export default class Option3 extends React.Component {
     constructor(props) {
@@ -39,7 +40,7 @@ export default class Option3 extends React.Component {
         return <React.Fragment>
             <div id="option3">
                 <div id="option3-container">
-                    <p onClick={this.toggleOptions}>IMAGE 3</p>
+                    <img src={option3}onClick={this.toggleOptions} width="400" height="400"></img>
                     {this.state.show3 ?
                         <div id="option3">
                             <img />

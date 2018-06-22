@@ -17,12 +17,25 @@ const config = {
       },
       {
         test: /\.(scss|css)$/,
+          
         loader: [
         "style-loader",
         "css-loader",
         "sass-loader",
         "postcss-loader"
       ]},
+      { 
+        test: /\.(png|jpg)$/, 
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              useRelativePath: true
+            }  
+          }
+        ]
+      },
     ]
   },
   resolve: {

@@ -8,15 +8,17 @@ const middleware = require('webpack-dev-middleware');
 const mongoose = require('mongoose');
 const instance = middleware(compiler);
 const blogRouter = require('./routes/blog');
+const assetsRouter = require('./routes/assets');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 app.use('client', express.static(`${__dirname}/client`));
 app.use(instance);
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 app.use('/api', blogRouter);
+app.use('/api', assetsRouter);
 
 
 //CONTACT COMPONENT - EMAIL FORM
@@ -82,7 +84,7 @@ app.post('/subscribe', (req, res) => {
 
 
 instance.waitUntilValid(() => {
-  console.log('package is valid');
+  // console.log('package is valid');
 });
 
 const PORT = process.env.PORT || 3000;
@@ -93,16 +95,16 @@ const server = (module.exports = {});
 server.isOn = false;
 server.start = () => {
   return new Promise((resolve, reject) => {
-    if (server.isOn) {
-      return reject(new Error('Error, server is already on'))
-    }
+     if(server.isOn) {
+       return reject(new Error('Error, server is already on'))
+     }
 
-    server.http = app.listen(PORT, () => {
-      console.log(`Listening to port ${PORT}`);
-      server.isOn = true;
-      mongoose.connect(process.env.MONGODB_URI);
-      return resolve(server);
-    })
+     server.http = app.listen(PORT, () => {
+      //  console.log(`Listening to port ${PORT}`);
+       server.isOn = true;
+       mongoose.connect(process.env.MONGODB_URI);
+       return resolve(server);
+     })
   })
 }
 
