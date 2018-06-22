@@ -1,9 +1,21 @@
 $lightgrey: #F1F1F1;
+$dark: #333;
 
-#content {
-  max-width: 900px;
+#blog {
+  max-width: 960px;
   margin: 0 auto;
 
+  ul {
+    list-style-type: none;
+    .post {
+      margin-bottom: 15px;
+      a {
+        font-size: 24px;
+        color: $dark;
+        text-decoration: none;
+      }
+    }
+  }
   input {
     max-width: 100%;
     margin-bottom: 20px;
