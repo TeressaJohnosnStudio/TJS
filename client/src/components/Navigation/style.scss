@@ -1,51 +1,64 @@
-body {
+@media all and (min-width: 768px) {
+  nav {
+    height: 190px;
+    min-width: 1070px;
+    margin: auto;
+    width: 50%;
 
-}
-
-#navigation {
-
-}
-
-nav {
-    width: 70%;
-    min-width: 800px;
-    height: 160px;
     ul {
-        &.clearfix {
-            &:after {
-                content: "";
-                display: block;
-                clear: both;
-            }
+      padding-left: 0;
+      &.clearfix {
+        &:after {
+          content: "";
+          display: block;
+          clear: both;
         }
-        li {
-            // display: inline;
-            // left: 0;
-            // right: 0;
-            // margin: 0 auto;
-            // width: auto;
-            // text-transform: uppercase;
-            // top: 0;
-            // float: none;
-            // top: auto;
-            // position: relative;
-            // border-right: none;
-            // width: auto;
-            // padding: 10px;
-            // border-bottom: 1px solid #CCC;
-            // border-top: 1px solid #FFF;
-            // transition: all 400ms ease-in-out;
-            float: left;
-            top: 65px;
-            position: relative;
-            border-right: 1px solid #CCC;
-            /* width: 12%; */
-            display: block;
+      }
 
-            a {
-                text-decoration: none;
-            }
-            
+      li {
+        float: left;
+        top: 100px;
+        position: relative;
+        border-right: 1px solid #CCC;
+        display: block;
+
+        &#logo, &#info, &:last-child {
+          border-right: none;
         }
+
+        &#logo {
+          top: 34px;
+        }
+
+        a {
+          text-decoration: none;
+          display: block;
+          padding: 0 15px;
+          text-transform: uppercase;
+          width: auto;
+          color: inherit;
+          font-weight: 300;
+
+          img {
+            max-width: 150px;
+          }
+        }
+      }
     }
+  }
+}
+
+@media all and (min-width: 1024px) {
+  nav {
+    ul {
+      li {
+        &#logo {
+
+        }
+        a {
+
+        }
+      }
+    }
+  }
 }

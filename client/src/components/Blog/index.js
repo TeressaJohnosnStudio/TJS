@@ -21,7 +21,7 @@ class Blog extends Component {
     }
 
     return (
-      <div>
+      <section id="blog">
         <h1>Blog</h1>
         <div>
           {loading
@@ -29,8 +29,7 @@ class Blog extends Component {
             : <PostList posts={posts} />
           }
         </div>
-
-      </div>
+      </section>
     )
   }
 }
