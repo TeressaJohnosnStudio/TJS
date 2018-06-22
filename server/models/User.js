@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
 SALT_WORK_FACTOR = 10;
 
 const userSchema = mongoose.Schema({
