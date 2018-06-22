@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const User = require('../models/user.js');
-const getAuth = require('../library/authorization.js');
+const User = require('../models/User.js');
+const getAuth = require('../../client/library/authorization.jsx');
 const jwt = require('jsonwebtoken');
 
 const router = express.Router();
