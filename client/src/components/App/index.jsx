@@ -16,6 +16,7 @@ import Subscription from '../Subscription';
 import BlogForm from '../Blog/BlogForm';
 import Post from '../Blog/Post';
 import AdminNav from '../AdminNav';
+import './normalize.scss';
 import './style.scss';
 
 import { connect } from 'react-redux';
@@ -51,26 +52,28 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div id="container">
+        <div>
           <AdminNav />
           <Navigation />
 
-          <Route exact path="/" component={Home} />
-          <Route path="/subscribe" component={Subscription} />
-          <Route path="/gallery" component={Gallery} />
-          <Route path="/about" component={About} />
-          <Route path="/info" component={Info} />
-          <Route path="/faq" component={FAQ} />
-          <Route path="/reviews" component={Reviews} />
-          <Route path="/contact" component={Contact} />
-          <Route exact path="/blog" component={Blog} />
-          <Route path="/admin/blog/add" component={BlogForm} />
-          <Route path='/blog/:_id'
-            render={props => <Post
-              startEditing={this.startEditing}
-              stopEditing={this.stopEditing}
-              removePost={this.removePost} {...props}/>}
-          />
+          <div id="container">
+            <Route exact path="/" component={Home} />
+            <Route path="/subscribe" component={Subscription} />
+            <Route path="/gallery" component={Gallery} />
+            <Route path="/about" component={About} />
+            <Route path="/info" component={Info} />
+            <Route path="/faq" component={FAQ} />
+            <Route path="/reviews" component={Reviews} />
+            <Route path="/contact" component={Contact} />
+            <Route exact path="/blog" component={Blog} />
+            <Route path="/admin/blog/add" component={BlogForm} />
+            <Route path='/blog/:_id'
+              render={props => <Post
+                startEditing={this.startEditing}
+                stopEditing={this.stopEditing}
+                removePost={this.removePost} {...props}/>}
+            />
+          </div>
         </div>
       </Router>
     )
