@@ -1,5 +1,9 @@
 import React from 'react';
-// import './style.scss';
+import './style.scss';
+import media1 from './assets/pinterest.png';
+import media2 from './assets/instagram.png';
+import media3 from './assets/twitter.png';
+import media4 from './assets/facebook.png';
 
 export default class Contact extends React.Component {
     constructor(props){
@@ -10,10 +14,10 @@ export default class Contact extends React.Component {
             <div className="left">
                 <div className="img"></div>
                 <div className="media">
-                    <img className="icon"/>
-                    <img className="icon"/>
-                    <img className="icon"/>
-                    <img className="icon"/>
+                    <a href="https://www.pinterest.com/teressajohnson/"><img src={media1}/></a>
+                    <a href="https://www.instagram.com/teressajohnson/"><img src={media2}/></a>
+                    <a href="https://twitter.com/teressajstudio"><img src={media3}/></a>
+                    <a href="https://www.facebook.com/teressa.johnson.studio"><img src={media4}/></a>
                 </div>
             </div>
 
