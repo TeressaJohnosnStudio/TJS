@@ -12,7 +12,6 @@ const assetsRouter = require('./routes/assets');
 const bodyParser = require('body-parser');
 const basicAuth = require('./routes/user.js');
 
-
 app.use('client', express.static(`${__dirname}/client`));
 app.use(instance);
 app.use(bodyParser.json({ limit: '50mb' }));

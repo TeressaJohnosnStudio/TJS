@@ -9,6 +9,7 @@ export default class Navigation extends React.Component {
       <div id="admin-navigation">
         <ul>
           <li><Link to="/admin/blog/add">+ New Blog Post</Link></li>
+
         </ul>
       </div>
     )
