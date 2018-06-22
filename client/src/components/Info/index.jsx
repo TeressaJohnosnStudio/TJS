@@ -1,6 +1,10 @@
 import React from 'react';
-// import './style.scss';
-
+import './style.scss';
+import medalion1 from './assets/bhldn_process.png';
+import medalion2 from './assets/greenWedding_process.jpg';
+import medalion3 from './assets/magnoliarogue.png';
+import medalion4 from './assets/seattleBride_process.png';
+import medalion5 from './assets/seattleMet_process.jpg';
 
 export default class Info extends React.Component {
     constructor(props){
@@ -37,11 +41,11 @@ export default class Info extends React.Component {
 
                 <div>
                     <p>FEATURED BY</p>
-                    <img id="medalion1"></img>
-                    <img id="medalion2"></img>
-                    <img id="medalion3"></img>
-                    <img id="medalion4"></img>
-                    <img id="medalion5"></img>
+                    <img src={medalion1}/>
+                    <img src={medalion2}/>
+                    <img src={medalion3}/>
+                    <img src={medalion4}/>
+                    <img src={medalion5}/>
                 </div>
             </div>
         </React.Fragment>
