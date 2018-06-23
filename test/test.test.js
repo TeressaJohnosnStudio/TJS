@@ -1,14 +1,21 @@
 'use strict';
+require('dotenv').config();
+
+const superagent =  require('superagent');
+const PORT = process.env.PORT || 3000;
+const SERVER_URL = 'http://localhost:' + PORT;
 const server = require('../index.js');
 require('dotenv').config();
 
-describe('All tests', () => {
-    beforeAll(server.start);
-    afterAll(server.stop);
-    describe('Server tests', () => {
-      test('throws 404 if route is not found', (done) => {
-        expect(40).toEqual(40);
-        done();
+
+describe('CONTACT ROUTE', () => {
+  test('Testing post route', (reject, resolve) => {
+    let expected;
+    superagent.post(`${SERVER_URL}/subscribe`)
+      .end((err, res) => {
+        expect(res.status).toBe(200);
+        resolve();
       });
-    });
+  });
 });
+
