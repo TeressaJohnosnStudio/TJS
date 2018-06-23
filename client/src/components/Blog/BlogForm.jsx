@@ -62,8 +62,7 @@ class BlogForm extends Component {
 
     data.append('image', this.state.image);
     data.append('title', this.state.title);
-    data.append('editorState', this.state.title);
-    console.log('onSubmit this.state.image  ', this.state.image);
+    data.append('editorState', editorState);
 
     this.props.createPost(data)
     this.redirectToTarget('/blog');
@@ -76,23 +75,27 @@ class BlogForm extends Component {
   render() {
     const editorState = this.state.editorState;
     return (
-      <form encType="multipart/form-data" onSubmit={this.onSubmit}>
-        <label htmlFor="title">Title</label>
-        <input id="title" name="title" placeholder="Tittle" type="text" value={this.state.title} onChange={this.onChange}/>
-        <input type="file" onChange={this.onImageChange} name="image" />
-        <label htmlFor="body">Body</label>
-        <Editor
-          editorState={editorState}
-          wrapperClassname="editor-wrapper"
-          editorClassname="editor"
-          toolbar={{
-            image: {urlEnabled: false, uploadEnabled: true}
-          }}
-          onEditorStateChange={this.onEditorStateChange}
-        />
-      <input type="submit" value="Publish"/>
-      <button onClick={this.stopEditing}>cancel</button>
-      </form>
+      <div id="blogForm">
+        <div id="content">
+          <form encType="multipart/form-data" onSubmit={this.onSubmit}>
+            <label htmlFor="title">Title</label>
+            <input id="title" name="title" placeholder="Tittle" type="text" value={this.state.title} onChange={this.onChange}/>
+            <input type="file" onChange={this.onImageChange} name="image" />
+            <label htmlFor="body">Body</label>
+            <Editor
+              editorState={editorState}
+              wrapperClassname="editor-wrapper"
+              editorClassname="editor"
+              toolbar={{
+                image: {urlEnabled: false, uploadEnabled: true}
+              }}
+              onEditorStateChange={this.onEditorStateChange}
+            />
+          <input type="submit" value="Publish"/>
+          <button onClick={this.stopEditing}>cancel</button>
+          </form>
+        </div>
+      </div>
     )
   }
 }
