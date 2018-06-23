@@ -16,6 +16,7 @@ import Blog from '../Blog';
 import Subscription from '../Subscription';
 import BlogForm from '../Blog/BlogForm';
 import Post from '../Blog/Post';
+import Footer from '../Footer';
 import AdminNav from '../AdminNav';
 import './normalize.scss';
 import './style.scss';
@@ -76,6 +77,7 @@ class App extends React.Component {
                 removePost={this.removePost} {...props}/>}
             />
           </div>
+          <Footer />
         </div>
       </Router>
     )
