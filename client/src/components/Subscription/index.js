@@ -21,14 +21,14 @@ export default class Subscription extends React.Component {
                     <div className="wg">
                         <p>w + g</p>
                     </div>
-                </div>
                 <div className="more-info">
                     <p>Tell me more</p>
                 </div>
-            </div>
+                </div>
                 <div className="description">
                     <p>Recurring seasonal floral arrangements tailored to the home and workplace. We applaud you. You’re about to enlist in a simple luxury that can tremendously elevate your life. It’s sort of like the milkman delivery, only better… and prettier. Fresh, peak-of-the-season, local flowers? Yes? Yes.</p>
                 </div>
+            </div>
 
             <div className="sub-right">
                 <div className="img-options">

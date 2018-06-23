@@ -7,6 +7,9 @@ import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import BlogForm from './BlogForm';
 import { updatePost } from '../../actions/blogActions';
+import { FontAwesomeIcon as Fa } from '@fortawesome/react-fontawesome';
+import * as fa from '@fortawesome/free-solid-svg-icons';
+import './style.scss';
 
 class Post extends Component {
   constructor(props) {
@@ -92,10 +95,10 @@ class Post extends Component {
 
   renderEditFor = (fieldName, prop) => {
     return (
-      <form onSubmit={this.editPost}>
-        <input type="text" name={fieldName} onChange={this.onChange} value={prop}/>
-        <input type="submit" value="save"/>
-        <button onClick={this.toggleEditTitle}>cancel</button>
+      <form className={fieldName} onSubmit={this.editPost}>
+        <input id="title" type="text" name={fieldName} onChange={this.onChange} value={prop} autoFocus />
+        <input className="save" type="submit" value="save"/>
+        <button className="cancel" onClick={this.toggleEditTitle}>cancel</button>
       </form>
     )
   }
@@ -105,13 +108,13 @@ class Post extends Component {
       <div id="post">
         {this.state.isEditingTitle
           ? this.renderEditFor('title', this.state.title)
-          : <h1>{this.state.title}<button onClick={this.toggleEditTitle}>edit</button></h1>
+          : <h1>{this.state.title}<button className="edit" onClick={this.toggleEditTitle}><Fa icon={fa.faPencilAlt}/></button></h1>
         }
 
         {this.state.isEditingContent
           ? this.renderContentForm()
           : <React.Fragment>
-              <button onClick={this.toggleEditContent}>edit</button>
+              <button className="edit" onClick={this.toggleEditContent}><Fa icon={fa.faPencilAlt} /></button>
               <article dangerouslySetInnerHTML={{ __html: this.props.post.editorState }} />
             </React.Fragment>
         }

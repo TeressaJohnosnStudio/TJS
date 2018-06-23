@@ -28,7 +28,6 @@ export default class Upload extends React.Component {
         axios.post('/api/assets', data)
         .then(res => res.data)
         .catch(err => err.message)
-        console.log('axios', axios.post('/api/assets', data));
     }
 
     render() {

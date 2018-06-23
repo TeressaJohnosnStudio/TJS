@@ -26,7 +26,6 @@ export default class Contact extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-
     handleSubmit(e) {
         e.preventDefault();
         this.setState({

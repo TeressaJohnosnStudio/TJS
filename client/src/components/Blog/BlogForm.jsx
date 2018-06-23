@@ -9,7 +9,8 @@ import { createPost, updatingPostStart, updatePost, updatingPostEnd } from '../.
 import '../../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './style.scss';
 import { Redirect } from 'react-router-dom';
-
+import Upload from '../Upload';
+import axios from 'axios';
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -22,18 +23,10 @@ class BlogForm extends Component {
   constructor(props) {
     super(props);
 
-    const html = this.props.post.editorState || '';
-    const contentBlock = htmlToDraft(html);
-    let editorState = null;
-
-    if (contentBlock) {
-      const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
-      editorState = EditorState.createWithContent(contentState);
-    }
-
     this.state = {
-      title: this.props.post.title || '',
-      editorState: editorState || EditorState.createEmpty(),
+      title: '',
+      image: null,
+      editorState: EditorState.createEmpty()
     }
   }
 
@@ -46,7 +39,16 @@ class BlogForm extends Component {
   }
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
+    this.setState({
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  onImageChange = e => {
+    console.log(e.target.files[0])
+    this.setState({
+      image: e.target.files[0]
+    })
   }
 
   onEditorStateChange = editorState => {
@@ -55,14 +57,16 @@ class BlogForm extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+    let data = new FormData();
     let editorState = draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()));
 
-    if(this.props.post.isEditing) {
-      this.props.updatePost({ _id: this.props.post._id, title: this.state.title, editorState: editorState });
-    } else {
-      this.props.createPost({ title: this.state.title, editorState: editorState })
-      this.redirectToTarget('/blog');
-    }
+    data.append('image', this.state.image);
+    data.append('title', this.state.title);
+    data.append('editorState', this.state.title);
+    console.log('onSubmit this.state.image  ', this.state.image);
+
+    this.props.createPost(data)
+    this.redirectToTarget('/blog');
   }
 
   stopEditing = () => {
@@ -72,14 +76,18 @@ class BlogForm extends Component {
   render() {
     const editorState = this.state.editorState;
     return (
-      <form onSubmit={this.onSubmit}>
+      <form encType="multipart/form-data" onSubmit={this.onSubmit}>
         <label htmlFor="title">Title</label>
-        <input name="title" placeholder="Tittle" type="text" value={this.state.title} onChange={this.onChange}/>
+        <input id="title" name="title" placeholder="Tittle" type="text" value={this.state.title} onChange={this.onChange}/>
+        <input type="file" onChange={this.onImageChange} name="image" />
         <label htmlFor="body">Body</label>
         <Editor
           editorState={editorState}
           wrapperClassname="editor-wrapper"
           editorClassname="editor"
+          toolbar={{
+            image: {urlEnabled: false, uploadEnabled: true}
+          }}
           onEditorStateChange={this.onEditorStateChange}
         />
       <input type="submit" value="Publish"/>

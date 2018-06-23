@@ -1,9 +1,14 @@
-.row {
-    display: flex;
+.quote {
+  height: 200px;
+  text-align: center;
+  font-size: 2vw;
+  border-bottom: 1px solid #ccc;
+  padding: 60px;
 }
-.column {
-    flex: 50%;
-}
-p{
-    font-size: 2em;    
+
+.purpose {
+  height: 200px;
+  text-align: center;
+  font-size: 2vw;
+  padding: 60px;
 }
