@@ -5,8 +5,6 @@ import media2 from './assets/instagram.png';
 import media3 from './assets/twitter.png';
 import media4 from './assets/facebook.png';
 import Banner from '../Banner';
-import contactPhoto from '../../../assets/bloom-blossom.jpg';
-import Upload from '../Upload';
 import contactPhoto from '../../../assets/17_0317_mass_download_2850.jpg';
 
 export default class Contact extends React.Component {

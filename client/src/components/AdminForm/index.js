@@ -3,8 +3,6 @@ require('dotenv').config();
 import React from 'react';
 // import axios from 'axios';
 
-// const fs = require('fs');
-
 export default class AdminForm extends React.Component {
     constructor(props) {
         super(props);
@@ -31,15 +29,15 @@ export default class AdminForm extends React.Component {
         if(username === process.env.USERNAME) {
             alert('logged in');
         }
-        // let username = this.state.username;
-        // let password = this.state.password;
+        let username = this.state.username;
+        let password = this.state.password;
 
-        // this.login(username, password);
+        this.login(username, password);
     };
  
-    // login = (username, password) => {
-    //     axios.post('/admin/login', {username, password})
-    // }
+    login = (username, password) => {
+        axios.post('/admin/login', {username, password})
+    }
 
     render() {
         return (
