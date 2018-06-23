@@ -1,0 +1,24 @@
+.sub-left{
+    display: inline;
+    float: left;
+    width: 50%;
+    #top-subContent{
+        display: inline;
+    }
+    .wg{
+        font: 16px/100% 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: 2em;
+        display: inline;
+    }
+
+}
+.sub-right{
+    float: right;
+    width: 50%;
+}
+.img-options{
+   text-align: center;
+   display: flex;
+   margin-right: auto;
+}

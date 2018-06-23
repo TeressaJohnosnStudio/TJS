@@ -2,14 +2,16 @@ import React from 'react';
 import Upload from '../Upload'
 import Banner from '../Banner';
 import './style.scss';
-import familyPhoto from '../../../assets/17_0429_Teressa_FAM015.jpg';
+// import familyPhoto from '../../../assets/17_0429_Teressa_FAM015.jpg';
 
 
 export default class About extends React.Component {
     render() {
         return (
           <div id="about">
-            <Banner img={familyPhoto} caption="A LITTLE ABOUT US" />
+            <Banner 
+            // img={familyPhoto} 
+            caption="A LITTLE ABOUT US" />
             <div id="content">
               <div className="top-box">
                 <p>We are a husband and wife team offering customized and unique floral and event design.</p>
