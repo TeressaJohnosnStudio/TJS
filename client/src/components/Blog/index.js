@@ -22,7 +22,6 @@ class Blog extends Component {
 
     return (
       <section id="blog">
-        <h1>Blog</h1>
         <div>
           {loading
             ? <div id="loading">Loading</div>

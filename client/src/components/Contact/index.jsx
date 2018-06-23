@@ -5,30 +5,25 @@ import media2 from './assets/instagram.png';
 import media3 from './assets/twitter.png';
 import media4 from './assets/facebook.png';
 import Banner from '../Banner';
-import contactPhoto from '../../../assets/bloom-blossom.jpg';
+import contactPhoto from '../../../assets/17_0317_mass_download_2850.jpg';
+import axios from 'axios'
 
 export default class Contact extends React.Component {
-    constructor(props) {
+    constructor(props){
         super(props);
         this.state = {
             name: '',
             email: '',
             subject: '',
             question: ''
-
         }
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.sendEmail = this.sendEmail.bind(this)
-
     }
-
-    handleChange(e) {
+    handleChange = (e) => {
         e.preventDefault();
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({ [e.target.name] : e.target.value })
     }
 
-    handleSubmit(e) {
+    handleSubmit = (e) => {
         e.preventDefault();
         this.setState({
             name: e.target.value,
