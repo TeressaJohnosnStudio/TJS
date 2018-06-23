@@ -15,7 +15,6 @@ export default class Contact extends React.Component {
     render(){
         return <React.Fragment>
           <div id="contact">
-            <Upload />
             <Banner img={contactPhoto} caption="Contact Us" />
             <div id="content">
               <div className="social">
