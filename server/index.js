@@ -100,7 +100,6 @@ server.start = () => {
      if(server.isOn) {
        return reject(new Error('Error, server is already on'))
      }
-
      server.http = app.listen(PORT, () => {
       //  console.log(`Listening to port ${PORT}`);
        server.isOn = true;
