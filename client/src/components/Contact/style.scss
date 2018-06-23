@@ -1,3 +1,40 @@
-body {
+$lightgrey: #f1f1f1;
+$darkgrey: #CCC;
+$dark: #777;
 
+#contact {
+  #content {
+    margin-bottom: 20px;
+    input {
+      width: 100%;
+      border: 1px solid $lightgrey;
+      height: 50px;
+      margin-bottom: 20px;
+      padding-left: 16px;
+    }
+    button {
+      padding: 3% 0 2.5% 0;
+      border: 0;
+      background: $darkgrey;
+      color: $dark;
+      width: 200px;
+    }
+  }
+  .social {
+    padding: 50px;
+    .media {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      a {
+        align-self: center;
+        padding: 5px;
+
+        img {
+          max-width: 30px;
+        }
+      }
+    }
+  }
 }
