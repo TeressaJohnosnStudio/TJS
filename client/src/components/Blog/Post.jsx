@@ -6,6 +6,7 @@ import { EditorState, convertToRaw, ContentState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import BlogForm from './BlogForm';
+import Banner from '../Banner';
 import { updatePost } from '../../actions/blogActions';
 import { FontAwesomeIcon as Fa } from '@fortawesome/react-fontawesome';
 import * as fa from '@fortawesome/free-solid-svg-icons';
@@ -108,15 +109,23 @@ class Post extends Component {
       <div id="post">
         {this.state.isEditingTitle
           ? this.renderEditFor('title', this.state.title)
-          : <h1>{this.state.title}<button className="edit" onClick={this.toggleEditTitle}><Fa icon={fa.faPencilAlt}/></button></h1>
+          : <div>
+              <h1>{this.state.title}
+                <button className="edit" onClick={this.toggleEditTitle}>
+                  <Fa icon={fa.faPencilAlt}/>
+                </button>
+              </h1>
+              <div id="post-image"><img src={this.props.post.imageUrl}/></div>
+            </div>
         }
 
         {this.state.isEditingContent
           ? this.renderContentForm()
-          : <React.Fragment>
+          : <div id="content">
               <button className="edit" onClick={this.toggleEditContent}><Fa icon={fa.faPencilAlt} /></button>
+              <button onClick={this.deletePost}>delete</button>
               <article dangerouslySetInnerHTML={{ __html: this.props.post.editorState }} />
-            </React.Fragment>
+            </div>
         }
       </div>
     )
@@ -132,7 +141,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state, ownProps) => {
   let isEditing = state.posts.isEditing;
-  let post = { _id: '', title: '', editorState: '', date: '' };
+  let post = { _id: '', title: '', editorState: '', date: '', imageUrl: '' };
   let postId = ownProps.match.params._id;
 
   if(postId && state.posts.posts.length > 0) {
@@ -140,7 +149,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 
   return {
-    post: { _id: postId, title: post.title, editorState: post.editorState, date: post.date, isEditing: isEditing }
+    post: { _id: postId, title: post.title, editorState: post.editorState, imageUrl: post.imageUrl, date: post.date, isEditing: isEditing }
   }
 }
 

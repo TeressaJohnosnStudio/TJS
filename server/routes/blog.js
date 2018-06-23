@@ -23,20 +23,23 @@ router.route('/blog')
       Body: fs.createReadStream(req.file.path)
     }
 
-    console.log(params);
+    console.log('Params', params);
 
     s3.upload(params, (err, data) => {
-      console.log(data);
-      if(err) console.log(err);
+      console.log('s3 data', data);
+      console.log('error', data);
+      if(err) throw err;
 
-      let post = {
+      let post = new Blog({
         title: req.body.title,
         editorState: req.body.editorState,
         imageUrl: data.Location
-      }
+      });
 
-      Blog.create(post)
-        .then(post => res.json(post))
+      console.log(post);
+
+      post.save()
+        .then(post => console.log('saved', post))
         .catch(err => res.send(err));
     })
   });
