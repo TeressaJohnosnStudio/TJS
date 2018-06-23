@@ -6,6 +6,10 @@ const config = {
   devServer: {
     historyApiFallback: true
   },
+  output: {
+    path: `${__dirname}/client/dist`,
+    filename: 'bundle-[hash].js'
+  },
   devtool: 'source-map',
   plugins: [new HtmlPlugin({template: __dirname + '/index.html'})],
   module: {
@@ -17,7 +21,7 @@ const config = {
       },
       {
         test: /\.(scss|css)$/,
-          
+
         loader: [
         "style-loader",
         "css-loader",
