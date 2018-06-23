@@ -40,7 +40,7 @@ export default class Option3 extends React.Component {
         return <React.Fragment>
             <div id="option3">
                 <div id="option3-container">
-                    <img src={option3}onClick={this.toggleOptions} width="400" height="400"></img>
+                    <img src={option3}onClick={this.toggleOptions} width="200" height="200"></img>
                     {this.state.show3 ?
                         <div id="option3">
                             <img />

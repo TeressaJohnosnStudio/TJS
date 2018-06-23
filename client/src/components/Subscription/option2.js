@@ -40,7 +40,7 @@ export default class Option2 extends React.Component {
         return <React.Fragment>
             <div>
                 <div id="option2-container">
-                    <img src={option2} onClick={this.toggleOptions} width="400" height="400"></img>
+                    <img src={option2} onClick={this.toggleOptions} width="200" height="200"></img>
                     {this.state.show2 ?
                         <div id="option2">
                             <p>OH, PICK ME!</p>

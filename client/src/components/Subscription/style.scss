@@ -1,4 +1,14 @@
-.img-options{
+.sub-left{
     display: inline;
-    
+    float: left;
+    width: 50%;
+}
+.sub-right{
+    float: right;
+    width: 50%;
+}
+.img-options{
+   text-align: center;
+   display: flex;
+   margin-right: auto;
 }

@@ -41,7 +41,7 @@ export default class Subscription extends React.Component {
         return <React.Fragment>
                 <div>
                     <div id="option1-container">
-                        <img src={option1} onClick={this.toggleOptions} width="400" height="400"></img>
+                        <img src={option1} onClick={this.toggleOptions} width="200" height="200"></img>
                         {this.state.show1 ?
                             <div id="option1"  >
                                 <p>YES, LOVELY.</p>
