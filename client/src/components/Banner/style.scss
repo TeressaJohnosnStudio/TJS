@@ -2,10 +2,9 @@
   position: relative;
   #banner {
     max-width: 100%;
-    height: 100vh;
+    height: 80vh;
     position: relative;
-
-
+    background-size: 100% !important;
   }
   .shade {
     position: absolute;
@@ -15,10 +14,10 @@
     left: 0;
     background: rgba(0, 0, 0, 0.5);
   }
-  
+
   .banner-caption {
     position: absolute;
-    top: 50%;
+    top: 40%;
     text-align: center;
     width: 100%;
     color: white;
