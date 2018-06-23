@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-
-
 export default class Banner extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +22,5 @@ export default class Banner extends Component {
 }
 
 Banner.propTypes = {
-  img: PropTypes.string.isRequired,
-  caption: PropTypes.string
+  img: PropTypes.string.isRequired
 }

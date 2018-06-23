@@ -5,6 +5,7 @@ import media2 from './assets/instagram.png';
 import media3 from './assets/twitter.png';
 import media4 from './assets/facebook.png';
 import Banner from '../Banner';
+import Upload from '../Upload';
 import contactPhoto from '../../../assets/17_0317_mass_download_2850.jpg';
 
 export default class Contact extends React.Component {
@@ -14,6 +15,7 @@ export default class Contact extends React.Component {
     render(){
         return <React.Fragment>
           <div id="contact">
+            <Upload />
             <Banner img={contactPhoto} caption="Contact Us" />
             <div id="content">
               <div className="social">

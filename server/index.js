@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 })
 
 instance.waitUntilValid(() => {
-  // console.log('package is valid');
+  console.log('package is valid');
 });
 
 const PORT = process.env.PORT || 3000;
