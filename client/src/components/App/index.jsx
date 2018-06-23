@@ -4,6 +4,7 @@ import {
   Route
 } from 'react-router-dom';
 import Navigation from '../Navigation';
+import AdminForm from '../AdminForm';
 import Home from '../Home';
 import Contact from '../Contact';
 import FAQ from '../FAQ';
@@ -58,6 +59,7 @@ class App extends React.Component {
 
           <div id="container">
             <Route exact path="/" component={Home} />
+            <Route path="/admin/login" component={AdminForm} />
             <Route path="/subscribe" component={Subscription} />
             <Route path="/gallery" component={Gallery} />
             <Route path="/about" component={About} />
