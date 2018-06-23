@@ -1,5 +1,7 @@
 $lightgrey: #F1F1F1;
 $dark: #333;
+$midDark: #444;
+$blue: #3498db;
 
 #blog {
   max-width: 960px;
@@ -7,10 +9,18 @@ $dark: #333;
 
   ul {
     list-style-type: none;
-    .post {
+    li.post {
       margin-bottom: 15px;
+      border-bottom: 1px solid $lightgrey;
+      padding: 20px 0;
+
+      .post-date {
+        color: $midDark;
+        font-style: italic;
+      }
+
       a {
-        font-size: 24px;
+        font-size: 2em;
         color: $dark;
         text-decoration: none;
       }
@@ -38,5 +48,55 @@ $dark: #333;
       height: 300px;
 
     }
+  }
+}
+
+#post {
+  max-width: 960px;
+  margin: 0 auto;
+  color: $dark;
+
+  h1 {
+    text-align: center;
+  }
+
+  article {
+    line-height: 1.868;
+
+    p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+  }
+}
+
+button.edit {
+  border: 1px solid lightgrey;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+form.title {
+  text-align: center;
+  font-size: 2em;
+  font-family: inherit;
+
+  input[type="text"] {
+    border: 0;
+    font-weight: bold;
+    margin: 0.67em 0;
+    color: $dark;
+
+    &:focus {
+      outline: inherit;
+    }
+  }
+  .save, .cancel {
+    font-size: 12px;
   }
 }
