@@ -10,11 +10,8 @@ const instance = middleware(compiler);
 const blogRouter = require('./routes/blog');
 const assetsRouter = require('./routes/assets');
 const bodyParser = require('body-parser');
-<<<<<<< HEAD
 const basicAuth = require('./routes/user.js');
-=======
 const nodemailer = require('nodemailer');
->>>>>>> 1e4caf510e779ec22c34a1a3acd292acb116784f
 
 app.use('client', express.static(`${__dirname}/client`));
 app.use(instance);

@@ -5,7 +5,7 @@ import media2 from './assets/instagram.png';
 import media3 from './assets/twitter.png';
 import media4 from './assets/facebook.png';
 import Banner from '../Banner';
-import contactPhoto from '../../../assets/17_0317_mass_download_2850.jpg';
+import contactPhoto from '../../../assets/bloom-blossom.jpg';
 
 export default class Contact extends React.Component {
     constructor(props) {
@@ -45,45 +45,45 @@ export default class Contact extends React.Component {
     };
 
     sendEmail = (name, email, subject, question) => {
-        axios.post('/contact', {name, email, subject, question})
+        axios.post('/contact', { name, email, subject, question })
     }
 
 
     render() {
         return <React.Fragment>
-          <div id="contact">
-            <Banner img={contactPhoto} caption="Contact Us" />
-            <div id="content">
-              <div className="social">
-                <div className="img"></div>
-                <div className="media">
-                  <a href="https://www.pinterest.com/teressajohnson/"><img src={media1}/></a>
-                  <a href="https://www.instagram.com/teressajohnson/"><img src={media2}/></a>
-                  <a href="https://twitter.com/teressajstudio"><img src={media3}/></a>
-                  <a href="https://www.facebook.com/teressa.johnson.studio"><img src={media4}/></a>
+            <div id="contact">
+                <Banner img={contactPhoto} caption="Contact Us" />
+                <div id="content">
+                    <div className="social">
+                        <div className="img"></div>
+                        <div className="media">
+                            <a href="https://www.pinterest.com/teressajohnson/"><img src={media1} /></a>
+                            <a href="https://www.instagram.com/teressajohnson/"><img src={media2} /></a>
+                            <a href="https://twitter.com/teressajstudio"><img src={media3} /></a>
+                            <a href="https://www.facebook.com/teressa.johnson.studio"><img src={media4} /></a>
+                        </div>
+
+                    </div>
+
+                    <div className="right">
+                        <div className="title">
+                            <p>contact</p>
+                        </div>
+                        <div className="description">It turns out that I enjoy meeting people and I love coffee. So if you like those same things, let's be friends. &#123;253&#125; 709–9509
                 </div>
 
+                        <div className="contact">
+                            <form onSubmit={this.handleSubmit} >
+                                <input id="name" name="name" type="text" placeholder="name" onChange={this.handleChange}></input>
+                                <input id="email" name="email" type="text" placeholder="email" onChange={this.handleChange}></input>
+                                <input id="subject" name="subject" type="text" placeholder="subject" onChange={this.handleChange}></input>
+                                <input id="question" name="question" type="text" placeholder="your question" onChange={this.handleChange}></input>
+                                <button type="submit">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div className="right">
-                <div className="title">
-                    <p>contact</p>
-                </div>
-                <div className="description">It turns out that I enjoy meeting people and I love coffee. So if you like those same things, let's be friends. &#123;253&#125; 709–9509
-                </div>
-
-                <div className="contact">
-                    <form onSubmit={this.handleSubmit} >
-                        <input id="name" name="name" type="text" placeholder="name"  onChange={this.handleChange}></input>
-                        <input id="email" name="email" type="text" placeholder="email"  onChange={this.handleChange}></input>
-                        <input id="subject" name="subject"  type="text" placeholder="subject"  onChange={this.handleChange}></input>
-                        <input id="question"name="question" type="text" placeholder="your question"  onChange={this.handleChange}></input>
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
-
-            </div>
-
         </React.Fragment>
     }
 }
