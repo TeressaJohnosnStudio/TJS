@@ -8,7 +8,7 @@ import {
 } from 'react-accessible-accordion';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import Banner from '../Banner';
-import bloomBlossom from '../../../assets/bloom-blossom.jpg';
+import bloomBlossom from '../../../assets/img_9767.jpg';
 
 export default class FAQ extends React.Component {
     constructor(props){
