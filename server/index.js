@@ -10,6 +10,7 @@ const instance = middleware(compiler);
 const blogRouter = require('./routes/blog');
 const assetsRouter = require('./routes/assets');
 const bodyParser = require('body-parser');
+const basicAuth = require('./routes/user.js');
 const nodemailer = require('nodemailer');
 
 app.use('client', express.static(`${__dirname}/client`));
@@ -17,8 +18,9 @@ app.use(instance);
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
-app.use('/api', blogRouter);
 app.use('/api', assetsRouter);
+app.use('/api', basicAuth);
+app.use('/api', blogRouter);
 
 
 //CONTACT COMPONENT - EMAIL FORM

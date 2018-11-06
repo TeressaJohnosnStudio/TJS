@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
 SALT_WORK_FACTOR = 10;
 
 const userSchema = mongoose.Schema({
@@ -7,7 +9,7 @@ const userSchema = mongoose.Schema({
   password: { type: String, required: true }
 })
 
-userSchmema.pre('save', function(next) {
+userSchema.pre('save', function (next) {
   let user = this;
 
   if (!user.isModified('password')) return next();
@@ -22,4 +24,5 @@ userSchmema.pre('save', function(next) {
   })
 })
 
-export default mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
+
