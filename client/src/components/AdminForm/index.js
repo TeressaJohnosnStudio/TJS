@@ -1,7 +1,5 @@
-require('dotenv').config();
-
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 export default class AdminForm extends React.Component {
     constructor(props) {
@@ -16,7 +14,7 @@ export default class AdminForm extends React.Component {
     handleChange = (event) => {
         event.preventDefault();
         this.setState({ [event.target.name]: event.target.value })
-    }
+    };
  
  
     handleSubmit = (event) => {
