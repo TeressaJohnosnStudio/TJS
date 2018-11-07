@@ -4,7 +4,7 @@ import {
   Route
 } from 'react-router-dom';
 import Navigation from '../Navigation';
-import AdminForm from '../AdminForm';
+// import AdminForm from '../AdminForm';
 import Home from '../Home';
 import Contact from '../Contact';
 import FAQ from '../FAQ';
@@ -12,24 +12,24 @@ import Gallery from '../Gallery';
 import About from '../About';
 import Info from '../Info';
 import Reviews from '../Reviews';
-import Blog from '../Blog';
+// import Blog from '../Blog';
 import Subscription from '../Subscription';
-import BlogForm from '../Blog/BlogForm';
-import Post from '../Blog/Post';
+// import BlogForm from '../Blog/BlogForm';
+// import Post from '../Blog/Post';
 import Footer from '../Footer';
-import AdminNav from '../AdminNav';
+// import AdminNav from '../AdminNav';
 import './normalize.scss';
 import './style.scss';
 
 import { connect } from 'react-redux';
-import { deletePost, updatingPostStart, updatingPostEnd } from '../../actions/blogActions';
+// import { deletePost, updatingPostStart, updatingPostEnd } from '../../actions/blogActions';
 
 const mapDispatchToProps = dispatch => {
   return {
-    deletePost: postId => dispatch(deletePost(postId)),
-    updatingPost: postId => dispatch(updatingPost(postId)),
-    updatingPostStart: postId => dispatch(updatingPostStart()),
-    updatingPostStop: postId => dispatch(updatingPostStop())
+    // deletePost: postId => dispatch(deletePost(postId)),
+    // updatingPost: postId => dispatch(updatingPost(postId)),
+    // updatingPostStart: postId => dispatch(updatingPostStart()),
+    // updatingPostStop: postId => dispatch(updatingPostStop())
   }
 }
 
@@ -39,28 +39,28 @@ class App extends React.Component {
     super(props)
   }
 
-  removePost = postId => {
-    this.props.deletePost(postId);
-  }
+  // removePost = postId => {
+  //   this.props.deletePost(postId);
+  // }
 
-  startEditing = () => {
-    this.props.updatingPostStart();
-  }
+  // startEditing = () => {
+  //   this.props.updatingPostStart();
+  // }
 
-  stopEditing = () => {
-    this.props.updatingPostEnd();
-  }
+  // stopEditing = () => {
+  //   this.props.updatingPostEnd();
+  // }
 
   render() {
     return (
       <Router>
         <div>
-          <AdminNav />
+          {/* <AdminNav /> */}
           <Navigation />
 
           <div id="container">
             <Route exact path="/" component={Home} />
-            <Route path="/admin/login" component={AdminForm} />
+            {/* <Route path="/admin/login" component={AdminForm} /> */}
             <Route path="/subscribe" component={Subscription} />
             <Route path="/gallery" component={Gallery} />
             <Route path="/about" component={About} />
@@ -68,13 +68,13 @@ class App extends React.Component {
             <Route path="/faq" component={FAQ} />
             <Route path="/reviews" component={Reviews} />
             <Route path="/contact" component={Contact} />
-            <Route exact path="/blog" component={Blog} />
-            <Route path="/admin/blog/add" component={BlogForm} />
-            <Route path='/blog/:_id'
+            {/* <Route exact path="/blog" component={Blog} /> */}
+            {/* <Route path="/admin/blog/add" component={BlogForm} /> */}
+            {/* <Route path='/blog/:_id'
               render={props => <Post
                 startEditing={this.startEditing}
                 stopEditing={this.stopEditing}
-                removePost={this.removePost} {...props}/>}
+                removePost={this.removePost} {...props}/>} */}
             />
           </div>
           <Footer />

@@ -39,5 +39,4 @@ export default class Upload extends React.Component {
 
         </React.Fragment>
     }
-
 }
