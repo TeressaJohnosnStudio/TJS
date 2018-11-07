@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
-import './style.scss';
 import logo from './assets/teressa-logo-final.jpg';
 
 export default class Navigation extends React.Component {
@@ -21,7 +20,7 @@ export default class Navigation extends React.Component {
             <li><Link to="/faq">FAQ</Link></li>
             <li><Link to="/reviews">Reviews</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
+            {/* <li><Link to="/blog">Blog</Link></li> */}
           </ul>
           </nav>
         </div>
