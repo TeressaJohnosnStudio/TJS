@@ -12,8 +12,8 @@ export default class Navigation extends React.Component {
         <div id="navigation">
         <nav>
           <ul className="clearfix">
-            <li id="subscriptsions"><Link to="/subscribe">Subscriptions</Link></li>
-            <li id="gallery"><Link to="/gallery">Gallery</Link></li>
+            <li id="subscriptions"><Link to="/subscribe">Subscriptions</Link></li>
+            {/* <li id="gallery"><Link to="/gallery">Gallery</Link></li> */}
             <li id="reviews"><Link to="/reviews">Press</Link></li>
             {/* <li id="info"><Link to="/info">Info</Link></li> */}
             <li id="logo"><Link to="/"><img src={logo}/></Link></li>
