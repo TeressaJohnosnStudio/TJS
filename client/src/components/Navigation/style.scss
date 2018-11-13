@@ -1,8 +1,8 @@
 @media all and (min-width: 768px) {
   * {
+    // border: dotted blue;
     
     nav {
-      // border: dotted blue;
       display: flex;
       justify-content: center;
       height: 190px;
@@ -10,7 +10,6 @@
       margin: auto;
       
       ul {
-        // padding-left: 50px;
         &.clearfix {
           &:after {
             content: "";
@@ -20,18 +19,20 @@
         }
         
         li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           float: left;
           top: 100px;
           position: relative;
           border-right: 1px solid #CCC;
-          display: block;
           
           &#logo, &#reviews, &:last-child {
             border-right: none;
           }
           
           &#logo {
-            top: 34px;
+            top: 30px;
           }
           
           a {
