@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
+import './style.scss';
 import logo from './assets/teressa-logo-final.jpg';
 
 export default class Navigation extends React.Component {
